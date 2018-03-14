@@ -1,0 +1,56 @@
+
+Create Self-signed CA:
+	
+To create self-signed ca need the following prefix:
+	1. find /etc/ -name "openssl.cnf" ( path of the openssl.cnf= ORGIN_OPENSSL)
+	2. export CRYPTO_HOME=~/Projects/crypto
+	3. mkdir -p $CRYPTO_HOME/ca
+	4. cp $ORGIN_OPENSSL $CRYPTO_HOME
+	5. modify the $CRYPTO_HOME/openssl.cnf,change the ca dir to ./ca
+	--------------------------------- $CRYPTO_HOME/openssl.cnf----------------
+	#[ CA_default ]
+	#
+	#dir		= ./ca		# Where everything is kept
+	#
+	6.export OPENSSL_CONF=$CRYPTO_HOME/openssl.cnf
+
+	7. create the unique certificate serial
+		echo "0001"> $CRYPTO_HOME/ca/serial
+	8. create a database file
+		touch $CRYPTO_HOME/ca/index.txt
+To create the self-signed ca:
+	
+	1. define the ca file name
+		export SELFSIGNED_CA=palm_commerce_ca
+	2. generate the rsa private key 
+		openssl genrsa  -out $CRYPTO_HOME/ca/$SELFSIGNED_CA.key 1024
+	3. gerenate the self-signed certification sign request (CSR)
+		openssl req -new -key $CRYPTO_HOME/ca/$SELFSIGNED_CA.key -out $CRYPTO_HOME/ca/$SELFSIGNED_CA.csr
+	4. gererate the self-signed certification from CSR
+		openssl x509 -req -days 365 -in $CRYPTO_HOME/ca/$SELFSIGNED_CA.csr -out $CRYPTO_HOME/ca/$SELFSIGNED_CA.crt -signkey $CRYPTO_HOME/ca/$SELFSIGNED_CA.key
+
+
+
+To create the self-signed certification:
+		export SELF_SIGNED=server_ts
+	1.create the transaction system private key and certification
+		mkdir $CRYPTO_HOME/$SELF_SIGNED
+		cd $CRYPTO_HOME/$SELF_SIGNED
+	2.generate the RSA des3 private key
+		openssl genrsa -des3 -out $SELF_SIGNED.key 1024
+	3.generate the CSR
+		openssl req -new -key $SELF_SIGNED.key -out $SELF_SIGNED.csr
+	4.signed the CSR by self-signed CA
+		openssl x509 -req -days 365 -in $SELF_SINGED.csr -out $SELF_SINGED.crt -CA $CRYPTO_HOME/ca/$SELFSIGNED_CA.crt -CAKey $CRYPTO_HOME/ca/$SELFSIGNED_CA.key -CASerial $CRYPTO_HOME/ca/serial
+	
+
+	
+
+	
+To create self-signed certification by bash:
+
+	1. generate the private key and CSR
+		sh generate_key.sh bank
+	2. signed the csr by self signed CA
+		sh csr_signed.sh bank
+	

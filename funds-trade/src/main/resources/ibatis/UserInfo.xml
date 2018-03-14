@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="UserInfo">
+
+    <typeAlias alias="userInfo" type="com.palmcommerce.funds.trade.ibatis.bean.UserInfo"/>
+    <typeAlias alias="userAccount" type="com.palmcommerce.funds.trade.ibatis.bean.UserAccount"/>
+    <typeAlias alias="bank" type="com.palmcommerce.funds.trade.ibatis.bean.BankBean"/>
+
+	<typeAlias alias="userAccountLog" type="com.palmcommerce.funds.trade.ibatis.bean.UserAccountLogBean"/>
+	
+
+	
+	<resultMap class="bank" id="bankResult">
+		<result property="bankId" column="BANK_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="bankFullName" column="BANK_FULL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="bankShortName" column="BANK_SHORT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="remark" column="REMARK" javaType="java.lang.String" jdbcType="VARCHAR" />
+		
+	</resultMap>
+	
+	<resultMap class="userInfo" id="userInfoResult">
+		<result property="userId" column="USER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="partnerId" column="PARTNER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="realName" column="REAL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="idNo" column="ID_NO" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="phoneNo" column="PHONE_NO" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="status" column="STATUS" javaType="java.lang.Long" jdbcType="NUMBER" />
+		<result property="createTime" column="CREAT_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		<result property="passwd" column="PASSWD" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="loginName" column="LOGIN_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+		<result property="idType" column="CARD_TYPE" javaType="java.lang.Integer" jdbcType="NUMBER" />
+		<result property="bankAccount" column="BANK_ACCOUNT" javaType="java.lang.String" jdbcType="VARCHAR" />
+		
+	</resultMap>
+	
+	<sql id="userInfoColoum">
+		user_id,partner_id,real_name,id_no,phone_no,status,creat_time,passwd,login_name,card_type,bank_account
+	</sql>
+	
+	
+	<!-- insert user account log-->
+	
+	 <insert id="insertUserAccountLog" parameterClass="userAccountLog">
+	  INSERT INTO USER_ACCOUNT_LOG(LOG_ID,MONEY,FORIGEN_ID,OPT_CODE,USER_ID,CREATE_TIME,CASH,GIFT)
+	  VALUES(#logId#,#money#,#forigenId#,#optCode#,#userId#,sysdate,#cash#,0.0)
+    </insert>
+	
+	
+	<!--  insert the UserInfo -->
+	 <insert id="insertUserInfo" parameterClass="userInfo">
+	   <selectKey keyProperty="userId" resultClass="java.lang.String">
+          select SEQ_USER_INFO_ID.nextval as userId from  dual
+      </selectKey>
+       insert into user_info (user_id,real_name,card_type,id_no,phone_no,bank_account,creat_time,status)
+       values(#userId#,#realName#,#idType#,#idNo#,#phoneNo#,#bankAccount#,#createTime#,'0')
+    </insert>
+    
+    <insert id="insertUserAccount" parameterClass="userAccount">
+    	insert into user_account(user_id,cash,gift,status,update_time,type,freeze_cash,CREDIT_MONEY,G_CREDIT_MONEY,EFFIECTIVE_TIME)
+       values(#userId#,#cash#,#gift#,#status#,#updateTime#,#type#,#freezeCash#,#creditMoney#,#gGreditMoney#,#effiectiveTime#)
+    </insert>
+    
+    
+	<select id="getUserAccount" parameterClass="java.lang.String" resultClass="userInfo">
+		SELECT USER_ID AS userId, CASH as accountMoney FROM user_account WHERE user_id = #userId#
+	</select>
+	
+	<select id="getUserInfo" parameterClass="java.lang.String" resultMap="userInfoResult">
+		SELECT <include refid="userInfoColoum"/> FROM user_info WHERE user_id = #userId#
+	</select>
+	<select id="getBankAll"  resultMap="bankResult">
+		SELECT BANK_ID,BANK_FULL_NAME,BANK_SHORT_NAME,REMARK FROM BANK where BANK_ID like 'B%'
+	</select> 
+	
+	<update id="updateMoney" parameterClass="map" >
+       update user_account set 
+        CASH=CASH+$money$,
+        UPDATE_TIME=sysdate
+        where user_id = #userId#
+    </update>
+<!-- 
+	<update id="updateBanknumber" parameterClass="map" >
+       update USER_INFO_ADD set 
+        BANK_CARD=#bankNumber#
+        where USE_USER_ID = #userId#
+    </update>
+     -->
+    <update id="updateBanknumber" parameterClass="map" >
+       update USER_INFO set 
+        BANK_ACCOUNT=#bankNumber#
+        where USER_ID = #userId#
+    </update>	
+</sqlMap>

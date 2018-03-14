@@ -1,0 +1,18 @@
+
+
+<RouteRuleResult>
+	<!-- <RouteRuleEntry>
+		<ToCode>BT000001</ToCode>
+		<Ip>cqtest.palm.com</Ip>
+		<Port>2023</Port>
+		<Bank>true</Bank>
+	</RouteRuleEntry> -->
+	
+	<RouteRuleEntry>
+		<ToCode>*</ToCode>
+		<Ip>192.168.1.243</Ip>
+		<Port>35101</Port>
+		<Bank>true</Bank>
+	</RouteRuleEntry>
+	
+</RouteRuleResult>

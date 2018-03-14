@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+  	<context:property-placeholder location="classpath*:META-INF/funds/funds-*.properties"/>
+	<context:annotation-config />
+	
+
+
+	
+	<bean id="jsonConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes" value="application/json"></property>
+	</bean>
+	<bean id="restTemplate"
+		class="org.springframework.web.client.RestTemplate">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jsonConverter" />
+			</list>
+		</property>
+	</bean>
+	<bean id="caRestClient"
+		class="com.palmcommerce.funds.ca.client.CaRestClient"
+		autowire="byName">
+		<property name="baseUrl" value="${ca.url}"></property>
+	</bean>
+</beans>

@@ -1,0 +1,11 @@
+
+--This line, and those below, will be ignored--
+
+A    funds-server-bank/src/main/java/com/palmcommerce/funds/bank/server/MainBankServer.java
+M    funds-server-bank/src/main/resources/META-INF/funds/funds-configuration.properties
+M    funds-server-bank/src/main/resources/META-INF/funds/listeners-local.xml
+M    funds-server-bank/src/main/resources/META-INF/funds/listeners.xml
+A    funds-server-bank/src/main/resources/META-INF/crts-local/P_243_35001.crt
+A    funds-server-bank/src/main/resources/META-INF/crts-local/B_244_25002.key
+A    funds-server-bank/src/main/resources/META-INF/crts-local/ca_root.crt
+M    funds-server-bank/pom.xml

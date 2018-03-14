@@ -1,0 +1,39 @@
+删除部署好的项目：rm -fr funds-server-proxy*
+
+项目部署步骤：
+1.在项目中修改配置文件（ca id-database listeners.xml oss）
+2.打包项目  install , 把打包好的两个jar包放到要部署的服务器上。
+  (1)target/funds-server-proxy-0.0.1-SNAPSHOT-distribution.zip
+  (2)把generated-resources/../jsw/.. 打成jar包      
+3.在projects/目录下解压funds-server-proxy.zip
+     unzip funds-server-proxy.zip
+      再进入funds-server-proxy目录下创建logs、repo、classes 目录
+     mkdir logs
+     mkdir repo
+     mkdir classes
+4.把funds-server-proxy-0.0.1-SNAPSHOT-distribution.zip 移动到 funds-server-proxy
+    mv ../funds-server-proxy-0.0.1-SNAPSHOT-distribution.zip .
+      然后解压      unzip funds-server-proxy-0.0.1-SNAPSHOT-distribution.zip
+5.把 funds-server-proxy-0.0.1-SNAPSHOT-distribution.zip 中lib下的jar包拷贝到repo目录下
+    cp funds-server-proxy-0.0.1-SNAPSHOT/lib/*.jar repo
+     把  funds-server-proxy-0.0.1-SNAPSHOT/funds-server-proxy-0.0.1-SNAPSHOT.jar 放到classes目录下
+    cp funds-server-proxy-0.0.1-SNAPSHOT/funds-server-proxy-0.0.1-SNAPSHOT.jar classes
+6.把zip包删除    rm -fr funds-server-proxy-0.0.1-SNAPSHOT   
+              rm *.zip
+7.到classes目录下解压里面的jar包
+    cd classes 
+    jar xvf funds-server-proxy-0.0.1-SNAPSHOT.jar
+8.回到funds-server-proxy目录，到conf目录下打开wrapper.conf，修改文件的位置    (1) ..2=classes  (2)log前面的 ../去掉然后退出。
+     退出先按Esc键，再按住shift同时按冒号键    再输入wq!
+    cd ..
+    cd conf/
+    vi wrapper.conf
+9.回到funds-server-proxy 目录下，到bin目录
+10.修改权限
+   chmod +x funds-server-proxy wrapper-linux-86-32
+   在bin下执行 ./funds-server-proxy console
+   
+   
+   
+查看权限命令：ls -la
+修改文件时输入按i键，删除按x键或delete键  

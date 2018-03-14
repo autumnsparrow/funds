@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_palmcommerce_funds_mock_client_model_Protocol240004" object="${protocol240004}" path="/protocol240004s" z="BFcMjj1bYjptZzmIbNXVIur1YN8=">
+        <field:display field="transcode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_transcode" object="${protocol240004}" z="2biMIH41NKUpHO3497/bUIKEWL4="/>
+        <field:display field="fromcode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_fromcode" object="${protocol240004}" z="VQlZPGzV1EzUaYGUKrzWfFxP6HQ="/>
+        <field:display field="tocode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_tocode" object="${protocol240004}" z="ooj2zf753BHZBvtyWewxE7ZUsuY="/>
+        <field:display field="siglen" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_siglen" object="${protocol240004}" z="W9h9nwX4u4gzYIrh5L9FKydQ4Q4="/>
+        <field:display field="response" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_response" object="${protocol240004}" z="lbsiB9FwsLZAZuKtGcy+xroGlLY="/>
+        <field:display field="serialNumber" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_serialNumber" object="${protocol240004}" z="JIpw3BknZ/fAedTsTTNZc7Z7R20="/>
+        <field:display field="transactionDatetime" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_transactionDatetime" object="${protocol240004}" z="l81epUs0djPOlduDNplwcLR170k="/>
+        <field:display field="cancelSerialNumber" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_cancelSerialNumber" object="${protocol240004}" z="ZQwk6vOX/WGc4Qvl1mBO3psvjLI="/>
+        <field:display field="userId" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_userId" object="${protocol240004}" z="zKWdvjQsE7/GV4akzaZY6NLbMDY="/>
+        <field:display field="userName" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_userName" object="${protocol240004}" z="DGQ6GWRT5DogBUrM7qaDf/VBEoc="/>
+        <field:display field="amount" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_amount" object="${protocol240004}" z="BEm3FTN7Q9dmXKqhOx+Bzv3Rl8M="/>
+        <field:display field="bankDatetime" id="s_com_palmcommerce_funds_mock_client_model_Protocol240004_bankDatetime" object="${protocol240004}" z="1aDorzACvRXtF7KZViUqP8oPZBg="/>
+    </page:show>
+</div>

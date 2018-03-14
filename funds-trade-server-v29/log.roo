@@ -1,0 +1,214 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-27 16:30:16
+project --topLevelPackage com.palmcommerce.server.v29
+jpa setup --provider ECLIPSELINK --database ORACLE 
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-27 17:08:40
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db.model --includeTables  "user_account user_charge user_accountlog*"
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db.model --includeTables  "USER_ACCOUNT USER_CHARGE USER_ACCOUNT_LOG**"
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-27 17:12:26
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-27 17:14:37
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-27 17:15:17
+service --entity ~.db.model.UserAccount --interface ~.db.service.UserAccountService
+service --entity ~.db.model.UserCharge --interface ~.db.service.UserChargeService
+service --entity ~.db.model.UserAccountLog100 --interface ~.db.service.UserAccountLogService
+service --entity ~.db.model.UserAccountLog101 --interface ~.db.service.UserAccountLogService
+service --entity ~.db.model.UserAccountLog102 --interface ~.db.service.UserAccountLogService
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-27 18:18:33
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:10:04
+focus --class ~.db.model.UserAccount
+finder list --filter userid
+finder list --filter "userid"
+finder list --filter userId
+finder list --filter findByUserId
+finder list --filter findByUserIdEquals
+finder list
+focus --class ~.db.model.UserAccount
+finder list
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:35:23
+// [failed] database reverse engineer --schema unable-to-obtain-connection 
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 17:36:28
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:36:37
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:37:46
+// [failed] database reverse engineer --schema unable-to-obtain-connection 
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 17:38:45
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:38:54
+// [failed] database reverse engineer --schema unable-to-obtain-connection 
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 17:39:32
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:40:25
+// [failed] database reverse engineer --schema lottery_v29_sx --includeTables "UserAccout"
+// [failed] database reverse engineer --schema lottery_v29_sx --includeTables "UserAccount"
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 17:43:03
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:44:18
+jpa setup --provider ECLIPSELINK --database ORACLE 
+jpa setup --provider ECLIPSELINK --database ORACLE 
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:48:05
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:48:56
+jpa setup --provider ECLIPSELINK --database ORACLE 
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db --includeTables "User*"
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db --includeTables "UserA*"
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db --includeTables "User*"
+// [failed] database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db --activeRecord --testAutomatically 
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:57:33
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 17:58:14
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db --activeRecord 
+focus --class ~.db.UserAccount 
+finder list
+finder list
+finder add --finderName findUserAccountByUserIdEquals
+entity jpa --class ~.db.UserAccount --activeRecord 
+focus --class ~.db.UserAccount
+finder list
+entity jpa --class ~.db.UserAccount --identifierType 
+focus --class ~.db.UserAccountPK
+// [failed] finder list
+entity jpa --class ~.db.UserAccountPK --activeRecord 
+finder list
+focus --class ~.db.UserAccountPK
+finder list 
+focus --class ~.db.UserAccountLog100
+finder list
+finder add --finderName findUserAccountLog100sByForigenIdEquals
+focus --class ~.db.UserAccountLog101
+finder add --finderName findUserAccountLog101sByForigenIdEquals
+focus --class ~.db.UserAccountLog102
+finder add --finderName findUserAccountLog102sByForigenIdEquals
+focus --class ~.db.UserAccountLog103
+finder add --finderName findUserAccountLog103sByForigenIdEquals
+focus --class ~.db.UserAccountLog104
+finder add --finderName findUserAccountLog104sByForigenIdEquals
+focus --class ~.db.UserAccountLog105
+finder add --finderName findUserAccountLog105sByForigenIdEquals
+focus --class ~.db.UserAccountLog106
+finder add --finderName findUserAccountLog106sByForigenIdEquals
+focus --class ~.db.UserAccountLog107
+finder add --finderName findUserAccountLog107sByForigenIdEquals
+focus --class ~.db.UserAccountLog108
+finder add --finderName findUserAccountLog108sByForigenIdEquals
+focus --class ~.db.UserAccountLog109
+finder add --finderName findUserAccountLog109sByForigenIdEquals
+focus --class ~.db.UserCharge
+finder list
+finder add --finderName findUserChargesByPartnerIdEquals
+service --class ~.db.UserCharge --interface ~.service.UserChargeService
+service --class ~.db.UserAccountLog100 --interface ~.service.UserAccountLogService
+service --entity ~.db.UserCharge --interface ~.service.UserChargeService
+service --entity ~.db.UserAccountLog100 --interface UserAccountLogService
+service --entity ~.db.UserAccountLog100 --interface UserAccountLogService
+service --entity ~.db.UserAccountLog100 --interface ~.service.UserAccountLogService
+focus --class ~.db.UserCharge
+finder list --filter OrderId
+finder add --finderName findUserChargesByOrderIdEquals
+database introspect --schema LOTTERY_V29_SX 
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db --includeTables "UserAccount"
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db --includeTables "UserAccount"
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 19:17:12
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 19:17:21
+focus --class ~.db.UserAccount
+finder list
+focus --class ~.db.UserAccount
+finder list
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 19:30:33
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 19:30:40
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 19:32:11
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 19:32:20
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 19:35:05
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 19:35:12
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 19:36:34
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 19:36:46
+focus --class ~.db.UserAccount
+// [failed] entity jpa --class ~.db.UserAccount --identifierField "userId partnerId" --identifierColumn "USER_ID PARTNER_ID"
+// [failed] entity jpa --class ~.db.UserAccount --identifierField "userId ,partnerId" --identifierColumn "USER_ID, PARTNER_ID"
+finder list
+service --entity ~.db.UserAccount --interface ~.service.UserAccountService
+service --interface ~.service.FundPaymentPlatformService 
+// [failed] field embedded --type UserAccountPK --fieldName userId
+embeddable --class ~.db.AccountPK
+focus --class ~.db.UserAccount 
+entity jpa --class ~.db.UserAccount --identifierField userId
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 20:13:51
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 20:13:59
+focus --class ~.db.AccountPK
+focus --class ~.db.UserAccount
+entity jpa --class ~.db.UserAccount --identifierField userId
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 20:27:12
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 20:27:21
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 20:29:56
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 20:31:00
+focus --class ~.db.UserAccount
+finder list 
+finder list 
+finder list 
+finder list 
+focus --class ~.db.UserAccount
+finder list 
+finder add --finderName findUserAccountsByUserIdEquals
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 20:48:29
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 20:48:57
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 20:55:44
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 21:01:30
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 21:07:33
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-28 21:19:36
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-28 21:30:51
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-29 09:49:35
+database reverse engineer --schema LOTTERY_V29_SX --package com.palmcommerce.server.v29.db --includeTables "USER*" --activeRecord --testAutomatically 
+focus --class ~.db.UserAccount
+finder list
+finder add --finderName findUserAccountsByUserIdEquals
+focus --class ~.db.UserAccountLog100
+finder list 
+finder add --finderName findUserAccountLog100sByForigenIdEquals
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-29 10:24:11
+focus --class ~.db.UserAccountLog101
+finder add --finderName findUserAccountLog101sByForigenIdEquals
+focus --class ~.db.UserAccountLog102
+finder add --finderName findUserAccountLog102sByForigenIdEquals
+focus --class ~.db.UserAccountLog103
+finder add --finderName findUserAccountLog103sByForigenIdEquals
+focus --class ~.db.UserAccountLog104
+finder add --finderName findUserAccountLog104sByForigenIdEquals
+focus --class ~.db.UserAccountLog105
+finder add --finderName findUserAccountLog105sByForigenIdEquals
+focus --class ~.db.UserAccountLog106
+finder add --finderName findUserAccountLog106sByForigenIdEquals
+focus --class ~.db.UserAccountLog107
+finder add --finderName findUserAccountLog107sByForigenIdEquals
+focus --class ~.db.UserAccountLog108
+// [failed] finder add --finderName findUserAccountLog108sByForigenIdEquals
+focus --class ~.db.UserAccountLog109
+finder add --finderName findUserAccountLog109sByForigenIdEquals
+focus --class ~.db.UserCharge
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-29 10:33:12
+focus --class ~.db.UserCharge
+finder list
+finder add --finderName findUserChargesByOrderIdEquals
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-29 11:32:00
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-29 11:32:09
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-29 13:04:19
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-29 13:40:10
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-29 13:41:14
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-30 09:37:00
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-12-30 09:53:01
+focus --class ~.db.UserIdentify
+finder list
+service --entity ~.db.UserIdentify --interface ~.service.UserIdentifyService
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-30 10:45:05
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-12-30 11:05:52
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2014-09-18 09:22:34
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2014-09-18 09:29:56

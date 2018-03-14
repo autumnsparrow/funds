@@ -1,0 +1,39 @@
+
+
+<RouteRuleResult>
+<<<<<<< .mine
+	<!-- <RouteRuleEntry>
+		<ToCode>*</ToCode>
+=======
+	 <RouteRuleEntry>
+		<ToCode>*</ToCode>
+>>>>>>> .r1972
+		<Ip>cqtest.palm.com</Ip>
+		<Port>2023</Port>
+		<Bank>true</Bank>
+	</RouteRuleEntry> 
+	<!--
+	<RouteRuleEntry>
+		<ToCode>*</ToCode>
+		<Ip>192.168.1.236</Ip>
+
+		<Port>35001</Port>
+		<Bank>false</Bank>
+<<<<<<< .mine
+	</RouteRuleEntry>
+	
+	<!-- <RouteRuleEntry>
+		<ToCode>*</ToCode>
+		<Ip>127.0.0.1</Ip>
+
+		<Port>35101</Port>
+		<Bank>false</Bank>
+
+		
+
+=======
+>>>>>>> .r1972
+	</RouteRuleEntry> -->
+	-->
+	
+</RouteRuleResult>

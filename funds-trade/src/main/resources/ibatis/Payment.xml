@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Payment">
+	<typeAlias type="com.palmcommerce.funds.trade.ibatis.bean.PayMoneyBean"
+		alias="paymoney" />
+	<typeAlias type="com.palmcommerce.funds.trade.ibatis.bean.AccountBankBean"
+		alias="accountBankBean" />	
+	<typeAlias type="com.palmcommerce.funds.trade.ibatis.bean.BankBindBean"
+		alias="bankBindBean" />	
+	<typeAlias alias="userCharge" type="com.palmcommerce.funds.trade.ibatis.bean.UserCharge"/>
+	<typeAlias alias="paymentSerialNumber" type="com.palmcommerce.funds.trade.ibatis.bean.PaymentSerialNumberBean"/>
+	<typeAlias alias="partnerAccountDetail" type="com.palmcommerce.funds.trade.ibatis.bean.PartnerAccountDetail"/>
+	
+	<resultMap class="bankBindBean" id="bankBindBeanResult">
+		<result property="seriesNo" column="SERIES_NO" />
+		<result property="userId" column="USER_ID" />
+		<result property="userName" column="USER_NAME" />
+		<result property="modifyTime" column="MODIFY_TIME" />
+		<result property="bankCode" column="BANK_CODE" />
+		<result property="bankNumber" column="BANK_NUMBER" />
+		<result property="bindType" column="BIND_TYPE" />
+	</resultMap>
+	
+	<resultMap class="partnerAccountDetail" id="partnerAccountDetailResult">
+		<result property="accountTime" column="STAT_MONTH" />
+		<result property="partnerId" column="PARTNER_ID" />
+		<result property="gameId" column="GAME_ID" />
+		<result property="saleMoney" column="SALE_ACCOUNT" />
+		<result property="publishCharge" column="ISSUE_INCOME_ACCOUNT" />
+		<result property="proxyCharge" column="SALE_REPLACE_ACCOUNT" />
+		<result property="prizeMoney" column="PRIZE_ACCOUNT" />
+		<result property="pay" column="PAY_ACCOUNT" />
+		<result property="account" column="ADD_UP_DEBT" />
+		<result property="bankPay" column="NEED_PAY_ACCOUNT" />
+		<result property="proxyRatio" column="PARTNER_POINT" />
+	</resultMap>
+		
+	<resultMap class="paymoney" id="paymoneyResult">
+		<result property="seriesNo" column="SERIES_NO" />
+		<result property="userId" column="USER_ID" />
+		<result property="userName" column="USER_NAME" />
+		<result property="createTime" column="CREATE_TIME" />
+		<result property="bankCode" column="BANK_CODE" />
+		<result property="accountTime" column="ACCOUNT_TIME" />
+		<result property="money" column="PAY_MONEY" />
+		<result property="accountType" column="ACCOUNT_TYPE" />
+		<result property="balanceMoney" column="BALANCE_MONEY" />
+		<result property="cancelSerialNo" column="CANCEL_SERIAL_NO" />
+	</resultMap>
+	<resultMap class="accountBankBean" id="accountBankBeanResult">
+		<result property="bankReportId" column="BANK_REPORT_ID" />
+		<result property="bankCode" column="BANKCODE" />
+		<result property="correctNum" column="CORRECT_NUM" />
+		<result property="correctMoney" column="CORRECT_MONEY" />
+		<result property="overNum" column="OVER_NUM" />
+		<result property="overMoney" column="OVER_MONEY" />
+		<result property="lackNum" column="LACK_NUM" />
+		<result property="lackMoney" column="LACK_MONEY" />
+		<result property="errorNum" column="ERROR_NUM" />
+		<result property="errorMoney" column="ERROR_MONEY" />
+		<result property="status" column="STATUS" />
+		<result property="createTime" column="CREATE_TIME" />
+		<result property="tradeTime" column="TRADE_TIME" />
+		<result property="operatorTime" column="OPERATOR_TIME" />
+	</resultMap>
+	
+	
+	
+	<sql id="userChargeColoum">
+		icharge_id,money,chrge_time,UPDATE_TIME,user_id,pay_com_id,pay_order_id,return_msg,status,CHARGE_TYPE
+	</sql>
+	
+	<!--  insert the payment serial number -->
+	<insert id="insertPaymentSerialNumber" parameterClass="paymentSerialNumber">
+		insert into payment_serial(bank_code,payment_serial_no,payment_datetime) values(#bankCode#,#paymentSerialNumber#,#paymentDatetime#)
+	</insert>
+	
+	<insert id="insertUserCharge" parameterClass="userCharge">
+		INSERT INTO user_charge (<include refid="userChargeColoum"/>) VALUES 
+		(SEQ_USER_CHARGE_ID.nextval,#money#,#chrgeTime#,sysdate,#userId#,#payComId#,#payOrderId#,#returnMsg#,'0')
+	</insert>
+	
+	    <insert id="insertAccountBankBean" parameterClass="accountBankBean">
+	    <selectKey keyProperty="bankReportId" resultClass="long">
+          select SEQ_BINDID.nextval as bankReportId from  dual
+      </selectKey>
+       insert into ACCOUNT_BANK_REPORT (BANK_REPORT_ID,BANKCODE,CORRECT_NUM,CORRECT_MONEY,OVER_NUM,OVER_MONEY,LACK_NUM,LACK_MONEY,ERROR_NUM,ERROR_MONEY,STATUS,CREATE_TIME,TRADE_TIME,OPERATOR_TIME)
+       values(#bankReportId#,#bankCode#,#correctNum#,#correctMoney#,#overNum#,#overMoney#,#lackNum#,#lackMoney#,#errorNum#,#errorMoney#,#status#,#createTime#,#tradeTime#,#createTime#)
+    </insert>
+	
+    <insert id="insertpaymoney" parameterClass="paymoney">
+       insert into USER_BANK_ACCOUNT (SERIES_NO,USER_ID,USER_NAME,CREATE_TIME,BANK_CODE,ACCOUNT_TIME,PAY_MONEY,ACCOUNT_TYPE,BALANCE_MONEY,PARTNER_ID,CANCEL_SERIAL_NO)
+       values(#seriesNo#,#userId#,#userName#,#createTime#,#bankCode#,#accountTime#,#money#,#accountType#,#balanceMoney#,#partnerId#,#cancelSerialNo#)
+    </insert>
+    
+    <insert id="insertbankBindBean" parameterClass="bankBindBean">
+       insert into BANK_BIND_ACCOUNT (SERIES_NO,USER_ID,USER_NAME,MODIFY_TIME,BANK_CODE,BANK_NUMBER,BIND_TYPE)
+       values(#seriesNo#,#userId#,#userName#,#modifyTime#,#bankCode#,#bankNumber#,#bindType#)
+    </insert>	
+    
+     <insert id="updateBankBindBean" parameterClass="bankBindBean">
+       update  BANK_BIND_ACCOUNT set 
+       	SERIES_NO=#seriesNo#,
+    	MODIFY_TIME=#modifyTime#,
+       	BANK_NUMBER=#bankNumber#,
+       	BIND_TYPE=#bindType# 
+       	where USER_ID=#userId# and BANK_CODE=#bankCode#
+    </insert>	
+    
+     <select id="getbankBindBean" parameterClass="map" resultMap="bankBindBeanResult">
+       select * from BANK_BIND_ACCOUNT where SERIES_NO=#seriesNo# and BANK_CODE=#bankCode#
+    </select>
+     <select id="getBankBindByUserId" parameterClass="map" resultMap="bankBindBeanResult">
+       select * from BANK_BIND_ACCOUNT where user_id=#userId# and bank_code=#bankCode#
+    </select>
+    
+     <select id="getpaymoneyBySeriesNo" parameterClass="map" resultMap="paymoneyResult">
+       select * from USER_BANK_ACCOUNT where SERIES_NO=#seriesNo# and BANK_CODE=#bankCode# and account_time = #time#
+    </select>
+     <select id="getPaymoneyByCancelSeriesNo" parameterClass="map" resultMap="paymoneyResult">
+       select * from USER_BANK_ACCOUNT where CANCEL_SERIAL_NO=#cancelSerialNo# and BANK_CODE=#bankCode# and account_time = #time#
+    </select>
+    <update id="updatePayMoneyBean" parameterClass="paymoney" >
+       update USER_BANK_ACCOUNT set 
+        ACCOUNT_TYPE=#accountType#,
+        BALANCE_MONEY=#balanceMoney#
+        where SERIES_NO=#seriesNo# and BANK_CODE=#bankCode# and account_time = #accountTime#
+    </update>
+    
+    
+     <select id="getPayMoneyList" parameterClass="map" resultMap="paymoneyResult">
+       select * from USER_BANK_ACCOUNT where ACCOUNT_TIME=#accountTime# and BANK_CODE=#bankCode#
+       <isNotNull prepend="and" property="accountType">
+				 ACCOUNT_TYPE=#accountType#
+		</isNotNull>
+    </select>
+    
+    
+     <select id="getAccountBankBean" parameterClass="map" resultMap="accountBankBeanResult">
+       select * from ACCOUNT_BANK_REPORT where TRADE_TIME=#accountTime# and BANKCODE=#bankcode#
+    </select>
+     <delete id="deleteAccountBankBean" parameterClass="map">
+       delete from ACCOUNT_BANK_REPORT where TRADE_TIME=#accountTime# and BANKCODE=#bankcode#
+    </delete>
+    
+    
+    
+     <select id="getPartnerAccountDetail" parameterClass="map" resultMap="partnerAccountDetailResult">
+       select * from STAT_SALE_PRIZE where PARTNER_ID=#partnerId# and GAME_ID=#gameId# and STAT_MONTH=#accountTime#
+     </select>
+     <delete id="deleteAccountDetail" parameterClass="map">
+       delete from STAT_SALE_PRIZE where PARTNER_ID=#partnerId# and GAME_ID=#gameId# and STAT_MONTH=#accountTime#
+    </delete>
+    
+    <insert id="insertPartnerAccountDeatil" parameterClass="partnerAccountDetail">
+       insert into STAT_SALE_PRIZE (STAT_MONTH,PARTNER_ID,GAME_ID,SALE_ACCOUNT,ISSUE_INCOME_ACCOUNT,SALE_REPLACE_ACCOUNT,PRIZE_ACCOUNT,PAY_ACCOUNT,TYPE,ADD_UP_DEBT,NEED_PAY_ACCOUNT,PARTNER_POINT)
+       values(#accountTime#,#partnerId#,#gameId#,#saleMoney#,#publishCharge#,#proxyCharge#,#prizeMoney#,#bankPay#,0,#account#,#pay#,#proxyRatio#)
+    </insert>
+    
+</sqlMap>

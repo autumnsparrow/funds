@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KeyStore base="/Users/sparrow/Downloads/svn/crts" cacrt="palm_commerce_ca.crt">
+
+	<Key code="TRS_001" name="server_transaction"  password="111111" blockSize="100"  signature="SHA256withRSA" siglen="128"/>
+	<Key code="TRS_002" name="server_transaction"  password="111111" blockSize="100"  signature="SHA256withRSA" siglen="128"/>
+
+</KeyStore>

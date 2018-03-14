@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_palmcommerce_funds_mock_client_model_Protocol240005" object="${protocol240005}" path="/protocol240005s" z="cgkK/74NSi1J3VeaTLWxKpzOJbc=">
+        <field:display field="transcode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_transcode" object="${protocol240005}" z="lirlwpc705sWWS8hWISJY4AA9qI="/>
+        <field:display field="fromcode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_fromcode" object="${protocol240005}" z="+8zuUqRJjfvERJ7o/h0kHAXasRE="/>
+        <field:display field="tocode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_tocode" object="${protocol240005}" z="UxTp7TSFDNeh4NE1e9IlYuG6h7A="/>
+        <field:display field="siglen" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_siglen" object="${protocol240005}" z="m6fD44KsXc3t+mkI8j0a5uJGuMk="/>
+        <field:display field="response" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_response" object="${protocol240005}" z="6nq/vPcVemMdo/3ckYdI8ds26so="/>
+        <field:display field="serialNumber" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_serialNumber" object="${protocol240005}" z="lzqWZF518COeQQu5VygwVd2PvEw="/>
+        <field:display field="transactionDatetime" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_transactionDatetime" object="${protocol240005}" z="8C8/fJWypjPm2anttBI3O8ocTSI="/>
+        <field:display field="realUsername" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_realUsername" object="${protocol240005}" z="OwloUjaDpKRi9JssvIHrIny8DGQ="/>
+        <field:display field="idType" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_idType" object="${protocol240005}" z="uX1qVVRx7cCLxAGhYVIV05r/qG0="/>
+        <field:display field="idNumber" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_idNumber" object="${protocol240005}" z="JYV7PNTrKRk1ynOqhTH6K16Js/w="/>
+        <field:display field="bankDatetime" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_bankDatetime" object="${protocol240005}" z="Huik4253/b1vGBVQBRK7kKVoo3Y="/>
+        <field:display field="phone" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_phone" object="${protocol240005}" z="PyVt1WHd09WpjfdiQBgrfTJdheI="/>
+        <field:display field="account" id="s_com_palmcommerce_funds_mock_client_model_Protocol240005_account" object="${protocol240005}" z="M5C6MygWuw+VGPcaRbpl64raQSM="/>
+    </page:show>
+</div>

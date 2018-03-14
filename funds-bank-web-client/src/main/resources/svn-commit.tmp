@@ -1,0 +1,17 @@
+
+--This line, and those below, will be ignored--
+
+A    META-INF/funds
+A    META-INF/funds/funds-configuration.properties
+A    META-INF/funds/funds-packet.properties
+A    META-INF/funds/listeners-local.xml
+A    META-INF/funds/funds-connection-trade-client-route.xml
+A    META-INF/funds/funds-ca-rest-client.properties
+A    META-INF/funds/funds-id.properties
+A    META-INF/funds/funds-id-database.properties
+A    META-INF/funds/funds-connection.properties
+A    META-INF/funds/funds-web-database.properties
+A    META-INF/funds/listeners.xml
+M    META-INF/crts-local/P_243_35001.crt
+M    META-INF/crts-local/B_244_25002.key
+M    META-INF/crts-local/ca_root.crt

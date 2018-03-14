@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-sftp="http://www.springframework.org/schema/integration/sftp"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:int-file="http://www.springframework.org/schema/integration/file"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file-2.2.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/sftp http://www.springframework.org/schema/integration/sftp/spring-integration-sftp.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:/META-INF/funds/funds-sftp-user-*.properties"/>
+
+	<int-file:inbound-channel-adapter id="filesIn"
+                                  directory="file:${local.input.directory}" 
+                                  prevent-duplicates="false" 
+                                  filename-pattern="${file.filter}">
+        <int:poller id="poller"  fixed-rate="50000" max-messages-per-poll="1"/>
+    </int-file:inbound-channel-adapter>
+
+    <int:service-activator input-channel="filesIn"
+                                   output-channel="filesOut"
+                                   ref="handler" method="handleFile">
+                                   
+                                   </int:service-activator>
+
+    <int-file:outbound-channel-adapter id="filesOut"
+                                   directory="file:${local.output.directory}"
+                                  mode="REPLACE"
+                                   delete-source-files="true"/>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<bean id="messageChannels" class="java.util.HashMap" scope="prototype" >
+    <constructor-arg>
+        <map key-type="java.lang.String" value-type="org.springframework.integration.MessageChannel">
+            <entry key="T0000001" >
+            <ref bean="proxySendingFirstOutputChannel"/>
+            </entry>
+            <entry key="T0000002" >
+            <ref bean="proxySendingSecondOutputChannel"/>
+            </entry>
+           
+           <entry key="T0000003" >
+            <ref bean="proxySendingThirdOutputChannel"/>
+            </entry>
+           
+           
+        </map>
+    </constructor-arg>
+</bean>
+	
+	<bean id="handler"
+		class="com.palmcommerce.funds.sftp.interceptor.SftpFileReceivedHandler">
+		<property name="messageChannels" ref="messageChannels"></property>
+	</bean>
+</beans>

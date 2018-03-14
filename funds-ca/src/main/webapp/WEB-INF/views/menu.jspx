@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_cakeys" z="aePuu/YbcTqcmLYVL3YpuH+mpIc=">
+            <menu:item id="i_cakeys_new" messageCode="global_menu_new" url="/cakeyses?form" z="RUrUErG/XQE6PTQw+A/Y8y+Qw58="/>
+            <menu:item id="i_cakeys_list" messageCode="global_menu_list" url="/cakeyses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gHWq1w8C+z+S9jJlOuyeibkKmHE="/>
+            <menu:item id="fi_cakeys_nodecodeequals" messageCode="global_menu_find" url="/cakeyses?find=ByNodecodeEquals&amp;form" z="VSQs7yA7hg4prEU6+7uLgZuyeQ4="/>
+        </menu:category>
+        <menu:category id="c_cacrts" z="d0CPgAKaOtQ+G7QFvQj3W4UdUCQ=">
+            <menu:item id="i_cacrts_new" messageCode="global_menu_new" url="/cacrtses?form" z="GSr/81tdQszP+JIoEkKedat0YCs="/>
+            <menu:item id="i_cacrts_list" messageCode="global_menu_list" url="/cacrtses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="V/ji+WXRs0izmOOoKgMv0IDm770="/>
+            <menu:item id="fi_cacrts_nodecodeequals" messageCode="global_menu_find" url="/cacrtses?find=ByNodecodeEquals&amp;form" z="82zTJWutcBQYKYI1CbpLyplynxQ="/>
+        </menu:category>
+    </menu:menu>
+</div>

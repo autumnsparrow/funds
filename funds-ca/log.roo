@@ -1,0 +1,57 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-18 16:29:46
+project --topLevelPackage com.palmcommerce.funds.ca
+jpa setup --database MYSQL --provider ECLIPSELINK 
+entity jpa --class com.palmcommerce.funds.ca.model.Cacrts
+field string --fieldName file
+field string --fieldName nodecode
+field date --fieldName modifytime --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd hh:mm:ss"
+finder list
+finder add findCacrtsesByNodecodeEquals
+entity jpa --class ~.model.Cakeys
+field string --fieldName file
+field string --fieldName nodecode
+field string --fieldName passphase
+field date --fieldName modifytime --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd hh:mm:ss"
+finder list
+finder add findCakeysesByNodecodeEquals
+web mvc setup
+web mvc all --package ~.web
+web mvc json all
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-18 16:36:17
+web mvc finder all
+json all
+web mvc json all
+web mvc json all
+web mvc json all
+web mvc finder all
+web mvc finder all
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-19 10:51:31
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-19 10:52:09
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-19 15:00:17
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-20 11:19:44
+focus --class ~.funds.ca.model.Cacrts
+field boolean --fieldName iscsr
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-20 11:27:44
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-20 13:40:58
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-20 14:45:21
+focus --class ~.funds.ca.model.Cacrts
+field file --fieldName file --contentType TXT
+focus --class ~.funds.ca.model.Cakeys
+field file --fieldName file --contentType TXT 
+field string --fieldName file --sizeMax 1024
+focus --class ~.funds.ca.model.Cacrts
+field string --fieldName file --sizeMax 1024
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-20 17:54:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-31 13:52:36
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-09 15:18:56
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-09 15:23:12
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-19 17:11:08
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-21 14:44:52
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2014-01-16 14:11:42
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2014-01-16 15:25:36
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2014-09-18 09:22:19
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2014-09-19 18:43:04

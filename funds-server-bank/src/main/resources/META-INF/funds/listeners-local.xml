@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServerRules>
+	<!--  will retune the xml form result -->
+	
+	<RouteRule>
+		
+		<Query>/META-INF/funds/funds-connection-trade-client-route.xml</Query>
+		<ToCode>from code</ToCode>
+		<FromCode> to code</FromCode>
+	</RouteRule>
+		
+	<!-- <LocalConfiguration>
+		<LocalKeyPath>/META-INF/crts/trade_01/T0000001.key</LocalKeyPath>
+		<LocalKeypassphase>t0000001</LocalKeypassphase>
+		<RemoteCrtPath>/META-INF/crts/trade_01/P0000001.crt</RemoteCrtPath>
+		<RemoteRootCa>/META-INF/crts/chongqing_lottery_ca.crt</RemoteRootCa>
+	</LocalConfiguration>
+	 -->
+	 
+	 
+	<LocalConfiguration>
+		<LocalKeyPath>/META-INF/crts-local/B_244_25002.key</LocalKeyPath>
+		<LocalKeypassphase>123456</LocalKeypassphase>
+		<RemoteCrtPath>/META-INF/crts-local/P_243_35001.crt</RemoteCrtPath>
+		<RemoteRootCa>/META-INF/crts-local/ca_root.crt</RemoteRootCa>
+	</LocalConfiguration>
+	
+
+	
+	
+	<SharedProcessorNumber>40</SharedProcessorNumber>
+	<TaskExecutorNumber>1</TaskExecutorNumber>
+	<ProxyThreadPollExecutorNumber>40</ProxyThreadPollExecutorNumber>
+	
+	
+	
+	<Listener>
+		<Port>25001</Port>
+		<Ip>127.0.0.1</Ip>
+	</Listener>
+	
+	
+
+	
+	
+<!-- 
+	<Client>
+		<MaxConnections>50</MaxConnections>
+		<MinConnections>2</MinConnections>
+		<PingInterval>5000</PingInterval>
+		<Clazz>com.palmcommerce.protocol.impl.p2t.P250001</Clazz>
+	</Client> -->
+</ServerRules>

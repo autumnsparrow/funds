@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_palmcommerce_funds_ca_model_Cakeys" items="${cakeyses}" z="4izLt2BSLL9wFVPGmon/zNZNFT8=">
+        <table:table data="${cakeyses}" id="l_com_palmcommerce_funds_ca_model_Cakeys" path="/cakeyses" z="TcjyMqxhpglpfkP0Feqiw3r3Law=">
+            <table:column id="c_com_palmcommerce_funds_ca_model_Cakeys_nodecode" property="nodecode" z="5AE4zh4/eGx1CgkKfC8yQyxM6v4="/>
+            <table:column id="c_com_palmcommerce_funds_ca_model_Cakeys_passphase" property="passphase" z="vlt8cSVaosglWKDDZ31CciDhy1g="/>
+            <table:column date="true" dateTimePattern="${cakeys_modifytime_date_format}" id="c_com_palmcommerce_funds_ca_model_Cakeys_modifytime" property="modifytime" z="Wl6Y+GNgDcNKjr3dqx56U+KPB9E="/>
+            <table:column id="c_com_palmcommerce_funds_ca_model_Cakeys_content" property="content" z="lP85HgSYY6P5onHIpwGa67ybdgg="/>
+        </table:table>
+    </page:list>
+</div>

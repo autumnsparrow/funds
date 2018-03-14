@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_palmcommerce_funds_mock_client_model_Protocol240001" object="${protocol240001}" path="/protocol240001s" z="UQQViXk1UJsgE9kj+eNGqjWJiYA=">
+        <field:display field="transcode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240001_transcode" object="${protocol240001}" z="QyF/qHQFK4xgNJRK/Z1W7Ia7nho="/>
+        <field:display field="fromcode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240001_fromcode" object="${protocol240001}" z="hvO94p9ZfJ0QbcbNwXO2ohweP80="/>
+        <field:display field="tocode" id="s_com_palmcommerce_funds_mock_client_model_Protocol240001_tocode" object="${protocol240001}" z="tyMdsSo2/IgOKwbR/J489eU+nys="/>
+        <field:display field="siglen" id="s_com_palmcommerce_funds_mock_client_model_Protocol240001_siglen" object="${protocol240001}" z="UQAyjHLyZ7a9PJD8DZfO5DPmt0Y="/>
+        <field:display field="response" id="s_com_palmcommerce_funds_mock_client_model_Protocol240001_response" object="${protocol240001}" z="jxXXtOAb8PC8CWxdoky4fq/2qvE="/>
+        <field:display field="userId" id="s_com_palmcommerce_funds_mock_client_model_Protocol240001_userId" object="${protocol240001}" z="uCYgiBVK+eNm5fpSr54qn/lQW6M="/>
+        <field:display field="serialNumber" id="s_com_palmcommerce_funds_mock_client_model_Protocol240001_serialNumber" object="${protocol240001}" z="OjWiAb/7kwgccraBUtCGYsWyULE="/>
+        <field:display field="transactionDatetime" id="s_com_palmcommerce_funds_mock_client_model_Protocol240001_transactionDatetime" object="${protocol240001}" z="Y83EUnZXs7YnB8s52zeNiwmyMxo="/>
+    </page:show>
+</div>

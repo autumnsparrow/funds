@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-sftp="http://www.springframework.org/schema/integration/sftp"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd         
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd        
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd       
+	http://www.springframework.org/schema/jee 
+	http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+	http://www.springframework.org/schema/integration 
+	http://www.springframework.org/schema/integration/spring-integration.xsd  
+	http://www.springframework.org/schema/integration/sftp 
+	http://www.springframework.org/schema/integration/sftp/spring-integration-sftp.xsd       
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+    <!--
+        This will automatically locate any and all property files you have
+        within your classpath, provided they fall under the META-INF/spring
+        directory. The located property files are parsed and their values can
+        then be used within application context files in the form of
+        ${propertyKey}.
+    -->
+    <context:property-placeholder location="classpath*:META-INF/spring/funds-*.properties"/>
+    <!--
+        Turn on AspectJ @Configurable support. As a result, any time you
+        instantiate an object, Spring will attempt to perform dependency
+        injection on that object. This occurs for instantiation via the "new"
+        keyword, as well as via reflection. This is possible because AspectJ
+        is used to "weave" Roo-based applications at compile time. In effect
+        this feature allows dependency injection of any object at all in your
+        system, which is a very useful feature (without @Configurable you'd
+        only be able to dependency inject objects acquired from Spring or
+        subsequently presented to a specific Spring dependency injection
+        method). Roo applications use this useful feature in a number of
+        areas, such as @PersistenceContext injection into entities.
+    -->
+    <context:spring-configured/>
+    <!--
+        This declaration will cause Spring to locate every @Component,
+        @Repository and @Service in your application. In practical terms this
+        allows you to write a POJO and then simply annotate the new POJO as an
+        @Service and Spring will automatically detect, instantiate and
+        dependency inject your service at startup time. Importantly, you can
+        then also have your new service injected into any other class that
+        requires it simply by declaring a field for your service inside the
+        relying class and Spring will inject it. Note that two exclude filters
+        are declared. The first ensures that Spring doesn't spend time
+        introspecting Roo-specific ITD aspects. The second ensures Roo doesn't
+        instantiate your @Controller classes, as these should be instantiated
+        by a web tier application context. Refer to web.xml for more details
+        about the web tier application context setup services.
+        
+        Furthermore, this turns on @Autowired, @PostConstruct etc support. These 
+        annotations allow you to use common Spring and Java Enterprise Edition 
+        annotations in your classes without needing to do any special configuration. 
+        The most commonly used annotation is @Autowired, which instructs Spring to
+        dependency inject an object into your class.
+    -->
+   
+    <!-- Above is Funds.Roo generated configuration. -->
+    <!--  											 -->
+    <!-- Fund.Roo database service -->
+   
+     
+     <bean class="com.palmcommerce.funds.roo.service.TransactionMetaServiceImpl" id="transactionMetaService"/>
+    <bean id="ossTradeAmountControlService"
+		class="com.palmcommerce.oss.jpa.service.OssTradeAmountControlServiceImpl">
+	</bean>
+	<bean id="ossWithdrawStandardService"
+		class="com.palmcommerce.oss.jpa.service.OssWithdrawStandardServiceImpl">
+	</bean>
+    
+ 
+    <!-- 		 alert  manager 									 -->
+    
+    <bean id="alertStandardControlManager"
+		class="com.palmcommerce.funds.alert.model.AlertStandardControlManager">
+		<property name="ossTradeAmountControlService"
+			ref="ossTradeAmountControlService">
+		</property>
+		<property name="ossWithdrawStandardService"
+			ref="ossWithdrawStandardService">
+		</property>
+	</bean>
+	
+	<bean id="emailProperty" class="com.palmcommerce.funds.alert.service.impl.EmailProperty">
+		<property name="from" value="${email.from}"></property>
+		<property name="host" value="${email.host}"></property>
+		<property name="username" value="${email.username}"></property>
+		<property name="subject" value="${email.subject}"></property>
+	</bean>
+	
+	
+	<bean id="smsServerConfig"
+		class="com.palmcommerce.funds.alert.service.sms.SmsServerConfig">
+		<property name="remoteUrl" value="${sms.server.remote.url}"></property>
+		<property name="userId" value="${sms.server.userid}"></property>
+		<property name="password" value="${sms.server.password}"></property>
+		<property name="bizType" value="${sms.server.biztype"></property>
+	</bean>
+	<bean id="smsSender"
+		class="com.palmcommerce.funds.alert.service.sms.SmsCodeSendHelper">
+		<property name="smsServerconfig" ref="smsServerConfig"></property>
+	</bean>
+	<!-- init-method="loadDefaultTradeRecord" -->
+    <bean id="alertManager"
+		class="com.palmcommerce.funds.alert.service.impl.DefaultAlertManager"
+		
+		>
+	</bean>
+	
+    
+	
+	
+	
+    <bean id="alertService"
+    	class="com.palmcommerce.oss.jpa.service.AlertServiceImpl">
+    </bean>
+
+    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean" >
+<property name="velocityProperties">
+<props>
+<prop key="resource.loader">class</prop>
+<prop key="class.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+</prop>
+</props>
+</property>
+
+</bean>
+    
+    <bean id="mailSender"
+    	class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    	<property name="host" value="${email.host}"></property>
+    	<property name="password" value="${email.password}"></property>
+    	<property name="port" value="${email.port}"></property>
+    	<property name="username" value="${email.username}"></property>
+    	<property name="protocol" value="${email.protocol}"/>
+    	<property name="defaultEncoding" value="UTF-8"/>
+  <property name="javaMailProperties">
+<props>
+<prop key="mail.smtp.auth">true</prop>
+
+</props>
+</property>
+    	
+    </bean>
+</beans>

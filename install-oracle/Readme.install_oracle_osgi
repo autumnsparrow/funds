@@ -1,0 +1,17 @@
+Make non-OSGi JDBC drivers OSGi compliant with wrapper add-on
+A common use case of wrapper add-on is for the conversion of non-OSGi JDBC drivers into OSGi compliant bundles. One place where you need to wrap a JDBC driver is when you have to reverse engineer an Oracle database using Spring Roo. Spring Roo does not provide OSGi Oracle JDBC drivers because of copyright issues. Before reverse-engineering an Oracle database, first make the driver OSGi compliant. To create a wrapper addon for an Oracle JDBC driver:
+Install the Oracle JDBC jar in your local machine Maven repository by typing this command.
+mvn install:install-file -Dfile=ojdbc5.jar -DgroupId=com.oracle 
+  -DartifactId=ojdbc5 -Dversion=11.2.0.2 -Dpackaging=jar
+Create a new directory called oracle-wrapper-addon and from the command line go to the directory.
+Open the Roo shell and execute the wrapper add-on command: addon create wrapper --topLevelPackage com.oracle.wrapper.jdbc --groupId com.oracle --artifactId ojdbc5 --version 11.2.0.2 --vendorName Oracle --licenseUrl oracle.com
+This command will generate only pom.xml files that will be used to convert a non-OSGi Oracle JDBC driver to an OSGi driver
+From inside the Roo shell, run this command to create the OSGi bundle: perform command --mavenCommand bundle:bundle
+That's it. You have now successfully created an OSGi bundle of a non-OSGi jar.
+
+
+That's works
+java -jar biz.aQute.bnd-latest.jar wrap  com/oracle/ojdbc14/10.2.0.5/ojdbc14-10.2.0.5.jar 
+mv ojdbc14-10.2.0.5.jar ojdbc14-osgi-10.2.0.5.jar
+cp ojdbc14-osgi-10.2.0.5.jar ~/.m2/repository/com/oracle/ojdbc14/10.2.0.5/
+#java -jar biz.aQute.bnd.jar wrap ojdbc14.jar

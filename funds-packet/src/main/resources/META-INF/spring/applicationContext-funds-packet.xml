@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	
+	
+ 	<!-- Funds.Packet  -->
+   <context:property-placeholder location="classpath*:/META-INF/funds/funds-*.properties"/>
+	
+	
+	<bean id="packetSecurityDecrypt"
+    	class="com.palmcommerce.funds.packet.security.openssl.impl.DefaultDecrypt"
+    	depends-on="configurationManager">
+    	<property name="configurationManager" ref="configurationManager"></property>
+    	<property name="enableDebug" value="${decrypt.debug}"></property>
+    </bean>
+    <bean id="packetSecurityEncrypt"
+    	class="com.palmcommerce.funds.packet.security.openssl.impl.DefaultEncrypt"
+    	depends-on="configurationManager">
+    	<property name="configurationManager" ref="configurationManager"></property>
+    	<property name="enableDebug" value="${encrypt.debug}"></property>
+    </bean>
+    <bean id="packetSecurity"
+    	class="com.palmcommerce.funds.packet.security.OpensslProxyPacketSecurity"
+    	depends-on="packetSecurityDecrypt,packetSecurityEncrypt">
+    	<property name="encrypt" ref="packetSecurityEncrypt"></property>
+    	<property name="decrypt" ref="packetSecurityDecrypt"></property>
+    	<property name="enableDebug" value="${packet.security.debug}"></property>
+    	<property name="enable" value="${packet.security.enable}"></property>
+    	<property name="metrics" ref="metrics"></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,49 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-27 14:22:05
+project --topLevelPackage com.palmcommerce.id
+jpa setup --provider ECLIPSELINK --database ORACLE 
+entity jpa --class com.palmcommerce.id.LocalAndRemoteSerialRelation
+field string --fieldName localSerialNumber --sizeMax 50
+field string --fieldName remoteSerialNumber --sizeMax 50
+field date --fieldName createTime --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd hh:mm:ss"
+finder list
+finder add --finderName findLocalAndRemoteSerialRelationsByLocalSerialNumberEquals
+finder add --finderName findLocalAndRemoteSerialRelationsByRemoteSerialNumberEquals
+service --interface ~.service.LocalAndRemoteSerialRelationService --class ~.LocalAndRemoteSerialRelation
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-27 14:30:48
+service --class ~.funds.id.model.LocalAndRemoteSerialRelation --interface ~.funds.id.model.LocalAndRemoteSerialRelation 
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-27 14:45:01
+service --interface ~.funds.id.service.LocalAndRemoteSerialRelationService --class ~.funds.id.model.LocalAndRemoteSerialRelation
+service --entity ~.funds.id.model.LocalAndRemoteSerialRelation --interface ~.funds.id.service.LocalAndRemoteSerialRelationService
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-27 15:19:20
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-10-27 16:27:41
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-10-27 16:28:08
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-28 13:50:30
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-28 15:11:51
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-31 13:52:45
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-09 15:18:54
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-09 15:23:12
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-19 17:11:06
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-19 20:22:16
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-21 10:57:54
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-11-21 10:59:35
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-21 11:55:02
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-11-21 11:56:13
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-21 13:17:14
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-11-21 13:18:15
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-21 14:44:55
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-30 13:40:07
+// [failed] jpa setup --provider ECLIPSELINK --database mysql
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-11-30 13:40:56
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-30 13:41:57
+jpa setup --provider ECLIPSELINK --database MYSQL 
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-11-30 13:43:27
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2014-03-03 11:37:01
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2014-03-03 13:36:38
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2014-09-18 09:22:22
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2014-09-19 18:43:04

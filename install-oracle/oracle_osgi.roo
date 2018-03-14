@@ -1,0 +1,3 @@
+addon create wrapper --topLevelPackage com.oracle.jdbc --groupId com.oracle --artifactId ojdbc14 --version 10.2.0.5 --vendorName oracle --licenseUrl http://www.oracle.com
+perform command --mavenCommand bundle:bundle
+osgi ps

@@ -1,0 +1,17 @@
+		STATE_INVALID(INVALID,"Invalid"),
+		STATE_ACTIVING(ACTIVING,"Activing"),
+		STATE_RECEIVING(RECEIVING,"Receiving"),
+		STATE_PROCESSING(PROCESSING,"Processing"),
+		STATE_SENDING(SENDING,"Sending"),
+		STATE_TIMEOUT(TIMEOUT,"Timeout"),
+		STATE_FINISHED(FINISHED,"Finished"),
+		STATE_ACTIVE_WAITING(ACTIVE_WAITING,"active_waiting")
+		
+	public static final int INVALID=-1;
+	public static final int ACTIVING=0;
+	public static final int RECEIVING=1;
+	public static final int PROCESSING=2;
+	public static final int SENDING=3;
+	public static final int TIMEOUT=4;
+	public static final int FINISHED=5;
+	public static final int ACTIVE_WAITING=6;

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_palmcommerce_funds_ca_model_Cacrts" items="${cacrtses}" z="K9AKlfxECPUqWJ+xsjTO2wkjijg=">
+        <table:table data="${cacrtses}" id="l_com_palmcommerce_funds_ca_model_Cacrts" path="/cacrtses" z="NxUZZgQNbiTKDrOxS93pduDo2Cg=">
+            <table:column id="c_com_palmcommerce_funds_ca_model_Cacrts_nodecode" property="nodecode" z="cYDXX/vHk/pSsI6uVhbcGEnXcpE="/>
+            <table:column date="true" dateTimePattern="${cacrts_modifytime_date_format}" id="c_com_palmcommerce_funds_ca_model_Cacrts_modifytime" property="modifytime" z="J6e2sKP2511oRtwsDcJNolXuXAs="/>
+            <table:column id="c_com_palmcommerce_funds_ca_model_Cacrts_iscsr" property="iscsr" z="XfLxvTUIQqyOxe7xsqHElXSt9mA="/>
+            <table:column id="c_com_palmcommerce_funds_ca_model_Cacrts_content" property="content" z="EV1QQDy53Sz5pPNrI7Pe/fPYwsM="/>
+        </table:table>
+    </page:list>
+</div>

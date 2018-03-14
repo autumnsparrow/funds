@@ -1,0 +1,283 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.palmcommerce</groupId>
+  <artifactId>funds-connection</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>funds-connection</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+   <java.version>1.6</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <spring.version>3.2.0.RELEASE</spring.version>
+     <aspectj.version>1.7.0</aspectj.version>
+     <mina.version>2.0.7</mina.version>
+     <funds.version>0.0.2-SNAPSHOT</funds.version>
+  </properties>
+  
+  
+  <repositories>
+        <repository>
+            <id>apache-maven-release</id>
+            <name>apache Maven Release Repository</name>
+            <url>http://repo2.maven.org/maven2</url>
+        </repository>
+        </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+ 
+ 
+ 
+ 
+
+  
+
+
+<dependency>
+	<groupId>commons-logging</groupId>
+	<artifactId>commons-logging</artifactId>
+	<version>1.1.1</version>
+</dependency>
+
+<dependency>
+  <groupId>log4j</groupId>
+  <artifactId>log4j</artifactId>
+  <version>1.2.17</version>
+</dependency>
+
+          
+    <dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-digester3</artifactId>
+	<version>3.2</version>
+</dependency>
+
+
+ <dependency>
+      <groupId>com.zeroc</groupId>
+      <artifactId>ice</artifactId>
+      <version>3.5.0</version>
+    </dependency>
+    
+    
+     <!-- Spring dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+		<groupId>cglib</groupId>
+		<artifactId>cglib</artifactId>
+		<version>2.2.2</version>
+	</dependency>
+	
+		<!-- funds dependencies -->
+
+        <dependency>
+        	<groupId>com.palmcommerce</groupId>
+        	<artifactId>funds-protocol</artifactId>
+        	<version>${funds.version}</version>
+        </dependency>
+        
+	
+	
+		<!--  mina dependencies -->
+        <dependency>
+        	<groupId>org.apache.mina</groupId>
+        	<artifactId>mina-integration-jmx</artifactId>
+        	<version>2.0.7</version>
+        	<type>jar</type>
+        	<exclusions>
+        		<exclusion>
+        			<artifactId>mina-core</artifactId>
+        			<groupId>org.apache.mina</groupId>
+        		</exclusion>
+        	
+        	<exclusion>
+        		<artifactId>mina-integration-ognl</artifactId>
+        		<groupId>org.apache.mina</groupId>
+        	</exclusion>
+        	<exclusion>
+        		<artifactId>mina-integration-beans</artifactId>
+        		<groupId>org.apache.mina</groupId>
+        	</exclusion>
+        	</exclusions>
+        </dependency>
+        
+          <dependency>
+        	<groupId>org.apache.mina</groupId>
+        	<artifactId>mina-integration-ognl</artifactId>
+        	<version>2.0.7</version>
+        	<type>jar</type>
+        	<exclusions>
+        		<exclusion>
+        			<artifactId>mina-core</artifactId>
+        			<groupId>org.apache.mina</groupId>
+        		</exclusion>
+        	
+        	<exclusion>
+        		<artifactId>mina-integration-jmx</artifactId>
+        		<groupId>org.apache.mina</groupId>
+        	</exclusion>
+        	<exclusion>
+        		<artifactId>mina-integration-beans</artifactId>
+        		<groupId>org.apache.mina</groupId>
+        	</exclusion>
+        	</exclusions>
+        </dependency>
+        
+         <dependency>
+        	<groupId>org.apache.mina</groupId>
+        	<artifactId>mina-integration-beans</artifactId>
+        	<version>2.0.7</version>
+        	<type>jar</type>
+        	<exclusions>
+        		<exclusion>
+        			<artifactId>mina-core</artifactId>
+        			<groupId>org.apache.mina</groupId>
+        		</exclusion>
+        	
+        	<exclusion>
+        		<artifactId>mina-integration-jmx</artifactId>
+        		<groupId>org.apache.mina</groupId>
+        	</exclusion>
+        	<exclusion>
+        		<artifactId>mina-integration-ognl</artifactId>
+        		<groupId>org.apache.mina</groupId>
+        	</exclusion>
+        	</exclusions>
+        </dependency>
+        <dependency>
+        	<groupId>org.apache.mina</groupId>
+        	<artifactId>mina-core</artifactId>
+        	<version>2.0.7</version>
+        </dependency>
+
+
+  </dependencies>
+ 
+ 
+ <build>
+ <plugins>
+ 
+   <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <version>2.1.2</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>jar-no-fork</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  
+ 
+ </plugins>
+ 
+ </build>
+ <!-- 
+ <build>
+ <plugins>
+ 
+ <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+            <archive>
+                <manifest>
+                    <mainClass>org.apache.camel.spring.Main</mainClass>
+                    <classpathPrefix>lib/</classpathPrefix>
+                    <addClasspath>true</addClasspath>
+                </manifest>
+            </archive>
+        </configuration>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+            <descriptors>
+                <descriptor>src/main/assembly/dist.xml</descriptor>
+            </descriptors>
+        </configuration>
+        <executions>
+            <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                    <goal>single</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+ 
+ </plugins>
+ 
+ </build> -->
+  <distributionManagement>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+ <!--  <repositories>
+    <repository>
+      <id>snapshots</id>
+      <name>Archiva Managed Snapshot Repository</name>
+      <url>http://mvn.palm.com:8080/repository/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>snapshots</id>
+      <name>Archiva Managed Snapshot Repository</name>
+      <url>http://mvn.palm.com:8080/repository/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>  -->
+ 
+</project>

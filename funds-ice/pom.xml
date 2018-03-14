@@ -1,0 +1,250 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.palmcommerce</groupId>
+  <artifactId>funds-ice</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>funds-ice</name>
+  <url>http://maven.apache.org</url>
+  
+  
+
+  <properties>
+   
+      <!-- Ice build properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   		 <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+   		 <ice.include.path>/opt/Ice-3.5.0/slice/Ice</ice.include.path>
+  <slf4j.version>1.7.2</slf4j.version>
+   <spring.version>3.2.0.RELEASE</spring.version>
+        
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+   <!--  <dependency>
+      <groupId>com.zeroc</groupId>
+      <artifactId>ice</artifactId>
+      <version>3.5.0</version>
+    </dependency> -->
+    
+    <dependency>
+      <groupId>com.zeroc</groupId>
+      <artifactId>ice</artifactId>
+      <version>3.5.0</version>
+    </dependency>
+    <dependency>
+	<groupId>commons-logging</groupId>
+	<artifactId>commons-logging</artifactId>
+	<version>1.1.1</version>
+</dependency>
+            
+  
+  		<dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+       
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        
+         <!-- Spring dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        
+     
+  </dependencies>
+  
+  <build>
+  
+  	
+  	<plugins>
+  	
+  	
+  	<plugin>
+  	    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>build-helper-maven-plugin</artifactId>
+    <executions>
+        <execution>
+            <phase>generate-sources</phase>
+            <goals><goal>add-source</goal></goals>
+            <configuration>
+                <sources>
+                    <source>src/generated/java</source>
+                </sources>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+  		
+  	
+  		<!--  Ice build plugin -->
+        <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>slice</id>
+            <phase>generate-sources</phase>
+            <configuration>
+              <target name="slice2java">
+                <mkdir dir="src/generated/java"/>
+                <mkdir dir="target/classes"/>
+                <taskdef name="slice2java" classname="Slice2JavaTask"
+                         classpathref="maven.plugin.classpath" />
+                <slice2java outputdir="src/generated/java">
+                  <fileset dir="src/main/slice" includes="*.ice" />
+                  <includepath>
+                    <pathelement path="${ice.include.path}" />
+                  </includepath>
+                </slice2java>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>remove-dir</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <phase>clean</phase>
+            <configuration>
+              <tasks>
+                <delete dir="src/generated/java"/>
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>com.zeroc</groupId>
+            <artifactId>ant-ice</artifactId>
+            <version>3.5.0</version>
+          </dependency>
+          
+        </dependencies>
+      </plugin>
+  	
+  	</plugins>
+
+  	<pluginManagement>
+  		<plugins>
+  			<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+  			<plugin>
+  				<groupId>org.eclipse.m2e</groupId>
+  				<artifactId>lifecycle-mapping</artifactId>
+  				<version>1.0.0</version>
+  				<configuration>
+  					<lifecycleMappingMetadata>
+  						<pluginExecutions>
+  							<pluginExecution>
+  								<pluginExecutionFilter>
+  									<groupId>
+  										org.apache.maven.plugins
+  									</groupId>
+  									<artifactId>
+  										maven-antrun-plugin
+  									</artifactId>
+  									<versionRange>
+  										[1.7,)
+  									</versionRange>
+  									<goals>
+  										<goal>run</goal>
+  									</goals>
+  								</pluginExecutionFilter>
+  								<action>
+  									<ignore></ignore>
+  								</action>
+  							</pluginExecution>
+  						</pluginExecutions>
+  					</lifecycleMappingMetadata>
+  				</configuration>
+  			</plugin>
+  			
+  			
+  			
+   <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <version>2.1.2</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>jar-no-fork</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  
+  		</plugins>
+  	</pluginManagement>
+  	
+  
+  	 
+  </build>
+ <distributionManagement>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>snapshots</id>
+      <name>Archiva Managed Snapshot Repository</name>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>snapshots</id>
+      <name>Archiva Managed Snapshot Repository</name>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  
+  
+</project>

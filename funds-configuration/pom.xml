@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.palmcommerce</groupId>
+  <artifactId>funds-configuration</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>funds-configuration</name>
+  
+
+  
+   <properties>
+   <java.version>1.6</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <spring.version>3.2.0.RELEASE</spring.version>
+     <aspectj.version>1.7.0</aspectj.version>
+     <jackson.version>2.1.1</jackson.version>
+     <funds.version>0.0.2-SNAPSHOT</funds.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	<groupId>org.bouncycastle</groupId>
+	<artifactId>bcprov-jdk16</artifactId>
+	<version>1.46</version>
+</dependency>
+<dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-io</artifactId>
+	<version>1.3.2</version>
+</dependency>
+            
+    <dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-digester3</artifactId>
+	<version>3.2</version>
+</dependency>
+<dependency>	
+    <groupId>com.j256.simplejmx</groupId>
+	<artifactId>simplejmx</artifactId>
+	<version>1.2-SNAPSHOT</version>
+</dependency>
+<dependency>
+  <groupId>com.palmcommerce</groupId>
+  <artifactId>funds-ca-rest-client</artifactId>
+  <version>${funds.version}</version>
+</dependency>
+
+
+            
+  </dependencies>
+  
+  
+ <distributionManagement>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>snapshots</id>
+      <name>Archiva Managed Snapshot Repository</name>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>snapshots</id>
+      <name>Archiva Managed Snapshot Repository</name>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  
+  
+  
+  <build>
+  <plugins>
+  
+   <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <version>2.1.2</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>jar-no-fork</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  
+  </plugins>
+  
+  
+  </build>
+</project>

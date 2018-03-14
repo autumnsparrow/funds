@@ -1,0 +1,329 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-05 20:58:58
+project --topLevelPackage com.palmcommerce.funds.roo
+// [failed] properties list --path SPRING_CONFIG_ROOT --name *.properties
+jpa setup --database ORACLE --provider ECLIPSELINK 
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-05 21:01:51
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-05 21:03:03
+jpa setup --database ORACLE --provider ECLIPSELINK 
+// [failed] properties list --name *.properties --path SPRING_CONFIG_ROOT
+// [failed] properties list --name database*  --path SPRING_CONFIG_ROOT
+entity jpa --class ~.model.TransactionMeta --testAutomatically 
+field string --fieldName globalSerial 
+field string --fieldName transcode --sizeMax 6
+field string --fieldName fromCode --sizeMax 20
+field string --fieldName toToce --sizeMax 20
+field date --fieldName tradeDateTime --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss"
+field string --fieldName paymentSerial --sizeMax 20
+field string --fieldName tradeSerial --sizeMax 20
+// [failed] field string --fieldName state --sizeMax 4
+field string --fieldName transactionState --sizeMax 4
+field string --fieldName transactionMessage --sizeMax 30
+entity jpa --class ~.model.TransactionRecord --testAutomatically 
+field string --fieldName userId --sizeMax 20
+field string --fieldName userName --sizeMax 10
+field string --fieldName idType --sizeMax 2 
+field string --fieldName idNumber --sizeMax 20
+field string --fieldName phoneNumber --sizeMax 20
+field number --fieldName tradeSystemDeposit --type long
+field string --fieldName bankAccount --sizeMax 30
+field date --fieldName bankDatetime --type java.util.Date --dateTimeFormatPattern "yyyyMMdd"
+field number --fieldName bindingType --type int 
+field number --fieldName chargeType --type int
+field number --fieldName amount --type long
+field string --fieldName cancelPaymentSerial --sizeMax 20
+// [failed] field set --fieldName globalSerial --type ~.model.TransactionMeta --cardinality ONE_TO_ONE --mappedBy globalSerial
+// [failed] field reference --fieldName globalSerial --type ~.model.TransactionMeta --cardinality ONE_TO_ONE --referencedColumnName globalSerial
+// [failed] field reference --fieldName TransactionMeta --type ~.model.TransactionMeta --cardinality ONE_TO_ONE --referencedColumnName globalSerial
+field reference --fieldName TransactionMeta --type ~.model.TransactionMeta --cardinality ONE_TO_ONE 
+entity jpa --class ~.model.TransactionFile --testAutomatically 
+field string --fieldName fromCode --sizeMax 20
+field string --fieldName toCode --sizeMax 20
+field date --fieldName tradeDatetime --type java.util.Date --dateTimeFormatPattern "yyyy-MM-DD HH:mm:ss"
+field date --fieldName bankDatetime --type java.util.Date --dateTimeFormatPattern "yyyyMMdd"
+field string --fieldName paymentSerial --sizeMax 20
+field string --fieldName tradeSystemSerial --sizeMax 20
+field string --fieldName userId --sizeMax 20
+field string --fieldName userName --sizeMax 10
+field string --fieldName bankAccount --sizeMax 30
+field number --fieldName amount --type int
+field string --fieldName transactionType --sizeMax 10
+service --entity ~.model.TransactionFile --interface ~.service.TransactionFileService
+service --entity ~.model.TransactionRecord --interface ~.service.TransactionRecordService
+
+
+
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-05 21:46:16
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-05 21:47:08
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-05 21:47:51
+perform tests
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-05 21:58:44
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-06 07:42:55
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-06 08:46:02
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-06 08:53:33
+service --interface ~.service.TransactionMetaService --entity ~.model.TransactionMeta
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-06 09:27:38
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-06 13:21:49
+focus --class ~.funds.roo.model.TransactionMeta
+finder list 
+finder add --finderName findTransactionMetasByGlobalSerialEquals
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-06 13:26:53
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-07 15:08:19
+// [failed] focus --class ~.model.TransactionRecord
+// [failed] focus --class ~.roo.model.TransactionRecord
+focus --class ~.funds.roo.model.TransactionRecord
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-07 15:11:17
+focus --class ~.funds.roo.model.TransactionRecord
+field string --fieldName fileName --sizeMax  50
+field number --fieldName fileSize --type int
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-07 15:12:53
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-07 15:22:29
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-09 09:09:28
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-09 09:38:13
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-10 10:30:06
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-10 10:30:54
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-10 10:33:18
+jpa setup --provider ECLIPSELINK --database ORACLE 
+
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-13 09:25:32
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-13 13:08:46
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-13 13:09:00
+
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-11 10:26:17
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-11 11:50:40
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-11 18:34:47
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-11 18:43:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-12 09:10:18
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-12 09:37:30
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-11 16:13:19
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-11 16:13:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-14 12:18:28
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-14 12:45:34
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-12 12:04:00
+hint
+hint
+entity jpa --class ~.model.TransactionBindFile --testAutomatically 
+field string --fieldName paymentSerial --sizeMax 20
+field string --fieldName bankCode --sizeMax 20
+field string --fieldName bindType --sizeMax 10
+field string --fieldName userId --sizeMax 20
+field string --fieldName userName --sizeMax 10
+field string --fieldName bankAccount --sizeMax 30
+field date --fieldName bankDatetime --type java.util.Date --dateTimeFormatPattern "yyyyMMdd"
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-12 14:12:51
+service type --entity ~.model.TransactionBindFile --interface  ~.service.TransactionBindFileService
+entity jpa --class ~.funds.roo.model.TransactionBindFile --testAutomatically 
+field string --fieldName paymentSerial --sizeMax 20
+field string --fieldName bankCode --sizeMax 20
+field string --fieldName bindType --sizeMax 10
+field string --fieldName userId --sizeMax 20
+field string --fieldName userName --sizeMax 10
+field string --fieldName bankAccount --sizeMax 30
+field date --fieldName bankDatetime --type java.util.Date --dateTimeFormatPattern "yyyyMMdd"
+service type --entity ~.funds.roo.model.TransactionBindFile --interface  ~.funds.roo.service.TransactionBindFileService
+focus --class ~.funds.roo.model.TransactionMeta
+finder list 
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-12 15:08:22
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-16 11:48:01
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-16 11:49:38
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-16 13:54:48
+entity jpa --class ~.funds.roo.model.TransactionBindFile --testAutomatically 
+field string --fieldName paymentSerial --sizeMax 20
+field string --fieldName bankCode --sizeMax 20
+field string --fieldName bindType --sizeMax 10
+field string --fieldName userId --sizeMax 20
+field string --fieldName userName --sizeMax 10
+field string --fieldName bankAccount --sizeMax 30
+field date --fieldName bankDatetime --type java.util.Date --dateTimeFormatPattern "yyyyMMdd"
+service type --entity ~.funds.roo.model.TransactionBindFile --interface  ~.funds.roo.service.TransactionBindFileService
+
+entity jpa --class ~.funds.roo.model.TransactionRemitFile --testAutomatically 
+field string --fieldName fromCode --sizeMax 20
+field string --fieldName toCode --sizeMax 20
+field date --fieldName tradeDatetime --type java.util.Date --dateTimeFormatPattern "yyyy-MM-DD HH:mm:ss"
+field date --fieldName bankDatetime --type java.util.Date --dateTimeFormatPattern "yyyyMMdd"
+field string --fieldName paymentSerial --sizeMax 20
+field string --fieldName tradeSystemSerial --sizeMax 20
+field string --fieldName userId --sizeMax 20
+field string --fieldName userName --sizeMax 10
+field string --fieldName bankAccount --sizeMax 30
+field number --fieldName amount --type int
+field string --fieldName transactionType --sizeMax 10
+service type --entity ~.funds.roo.model.TransactionRemitFile --interface ~.funds.roo.service.TransactionRemitFileService
+
+
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-16 14:11:06
+
+entity jpa --class ~.funds.roo.model.OssReconciliationStatics --testAutomatically 
+field number --fieldName correctOrderSum --type long
+field number --fieldName correctOrderAmout --type long
+field number --fieldName wrongOrderSum --type long
+field number --fieldName wrongOrderAmout --type long
+field number --fieldName overOrderSum --type long
+field number --fieldName overOrderAmout --type long
+field number --fieldName lessOrderSum --type long
+field number --fieldName lessOrderAmout --type long
+field string --fieldName tradeTime --sizeMax 20
+field string --fieldName financeName --sizeMax 20
+service type --entity ~.funds.roo.model.OssReconciliationStatics --interface  ~.funds.roo.service.OssReconciliationStaticsService
+
+
+entity jpa --class ~.oss.jpa.model.OssReconciliationRemitStatics --testAutomatically 
+field number --fieldName correctOrderSum --type long
+field number --fieldName correctOrderAmout --type long
+field number --fieldName wrongOrderSum --type long
+field number --fieldName wrongOrderAmout --type long
+field number --fieldName overOrderSum --type long
+field number --fieldName overOrderAmout --type long
+field number --fieldName lessOrderSum --type long
+field number --fieldName lessOrderAmout --type long
+field string --fieldName tradeTime --sizeMax 20
+field string --fieldName financeName --sizeMax 20
+service type --entity ~.oss.jpa.model.OssReconciliationRemitStatics --interface  ~.oss.jpa.service.OssReconciliationRemitStaticsService
+
+
+
+
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-16 14:11:06
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-16 17:44:57
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-17 10:21:28
+hint
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-17 17:38:29
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-17 17:42:42
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-17 17:47:23
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-17 18:41:12
+service type --entity ~.oss.jpa.model.OssTradeAmountControl --interface  ~.oss.jpa.service.OssTradeAmountControlService
+service type --entity ~.oss.jpa.model.OssWithdrawStandard --interface  ~.oss.jpa.service.OssWithdrawStandrdService
+service type --entity ~.oss.jpa.model.OssAlert  --interface  ~.oss.jpa.service.AlertService
+focus --class ~.oss.jpa.model.OssWithdrawStandard
+finder list 
+find add findOssWithdrawStandardsByPlatformIdEquals
+focus --class ~.oss.jpa.model.OssTradeAmountControl
+finder list
+finder list --depth  2
+finder list --depth 2 --filter  platformId,bankId
+finder add findOssTradeAmountControlsByPlatformIdEqualsOrBankIdEquals
+focus --class ~.oss.jpa.model.OssAlert
+finder list
+finder add findOssAlertsByAlertTypeId
+focus --class ~.funds.roo.model.TransactionMeta
+finder list
+finder add findTransactionMetasByTradeDateTimeBetween
+
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-17 19:13:07
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-18 15:00:36
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-17 19:12:11
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-17 20:37:28
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-18 10:19:13
+hint
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-18 17:51:50
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-19 11:11:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-19 11:28:19
+service type --interface ~.oss.jpa.service.OssWithdrawStandardService --entity ~.oss.jpa.model.OssWithdrawStandard 
+help service
+email template setup 
+email sender setup --hostServer host --password password --username username --protocol smtp --port   port\
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-19 18:14:11
+focus --class ~.oss.jpa.model.OssBank
+// [failed] finder list --filter bankid
+// [failed] finder list
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-19 18:17:57
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-19 18:18:01
+focus --class ~.oss.jpa.model.OssBank
+finder list
+finder list --filter bankId
+finder add findOssBanksByBankIdEquals
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-20 12:12:01
+// [failed] service type --entity ~.oss.jpa.model.OssWithdrawStandard  --interface ~.oss.jpa.service.OssWithdrawStandardService
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-20 12:14:02
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-20 12:14:05
+service type --entity ~.oss.jpa.model.OssWithdrawStandard --interface  ~.oss.jpa.service.OssWithdrawStandardService
+<<<<<<< .mine
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-20 21:02:38
+email template setup --from zhenzhou.zhang@palm-commerce.com --subject "Alert"
+field email template --fieldName mailTemplate --class ~.funds.alert.service.EmailAlertServiceImpl
+field email template --fieldName mailTemplate --class ~.funds.alert.service.EmailAlerm
+// [failed] field email template --class ~.funds.alert.service.IAlertMessage
+// [failed] field email template --fieldName mailTemplate --class ~.funds.alert.service.IAlertMessage
+// [failed] field email template --fieldName mailTemplate --class ~.funds.alert.service.IAlertMessage
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-20 21:11:37
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-20 21:11:42
+field email template --fieldName mailTemplate --class ~.funds.alert.service.IAlertMessage
+field email template --fieldName mailTemplate --class ~.funds.alert.service.IAlertMessageImpl
+field email template --fieldName mailTemplate --class ~.funds.alert.service.IAlertManager
+field email template --fieldName mailTemplate --class ~.funds.alert.service.impl.DefaultAlertManager
+=======
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-20 14:20:07
+entity jpa --class ~.funds.roo.model.TransactionRemitFile --testAutomatically 
+field string --fieldName fromCode --sizeMax 20
+field string --fieldName toCode --sizeMax 20
+field date --fieldName tradeDatetime --type java.util.Date --dateTimeFormatPattern "yyyy-MM-DD HH:mm:ss"
+field date --fieldName bankDatetime --type java.util.Date --dateTimeFormatPattern "yyyyMMdd"
+field string --fieldName paymentSerial --sizeMax 20
+field string --fieldName tradeSystemSerial --sizeMax 20
+field string --fieldName userId --sizeMax 20
+field string --fieldName userName --sizeMax 10
+field string --fieldName bankAccount --sizeMax 30
+field number --fieldName amount --type int
+field string --fieldName transactionType --sizeMax 10
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-20 14:31:22
+entity jpa --class ~.funds.roo.model.TransactionRemitFile --testAutomatically 
+field string --fieldName fromCode --sizeMax 20
+field string --fieldName toCode --sizeMax 20
+field date --fieldName tradeDatetime --type java.util.Date --dateTimeFormatPattern "yyyy-MM-DD HH:mm:ss"
+field date --fieldName bankDatetime --type java.util.Date --dateTimeFormatPattern "yyyyMMdd"
+field string --fieldName paymentSerial --sizeMax 20
+field string --fieldName tradeSystemSerial --sizeMax 20
+field string --fieldName userId --sizeMax 20
+field string --fieldName userName --sizeMax 10
+field string --fieldName bankAccount --sizeMax 30
+field number --fieldName amount --type int
+field string --fieldName transactionType --sizeMax 10
+service type --entity ~.funds.roo.model.TransactionRemitFile --interface ~.funds.roo.service.TransactionRemitFileService
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-20 15:59:39
+entity jpa --class ~.oss.jpa.model.OssReconciliationRemitStatics --testAutomatically 
+field number --fieldName correctOrderSum --type long
+field number --fieldName correctOrderAmout --type long
+field number --fieldName wrongOrderSum --type long
+field number --fieldName wrongOrderAmout --type long
+field number --fieldName overOrderSum --type long
+field number --fieldName overOrderAmout --type long
+field number --fieldName lessOrderSum --type long
+field number --fieldName lessOrderAmout --type long
+field string --fieldName tradeTime --sizeMax 20
+field string --fieldName financeName --sizeMax 20
+service type --entity ~.oss.jpa.model.OssReconciliationRemitStatics --interface  ~.oss.jpa.service.OssReconciliationRemitStaticsService
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-20 16:58:57
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-20 17:34:21
+>>>>>>> .r1021
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-21 14:59:06
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-21 15:57:52
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-21 17:39:51
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-22 09:29:35
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-26 16:05:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-26 18:06:49
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-31 13:52:39
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-07 16:20:23
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-08 13:42:44
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-08 16:16:25
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-09 10:43:26
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-09 15:31:24
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-09 16:03:44
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-11 21:56:57
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-11-12 20:26:05
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-11-12 22:11:04
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-19 13:41:26
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-11-19 13:42:04
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-11-25 21:17:39
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-11-25 21:18:16

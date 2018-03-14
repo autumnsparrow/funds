@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	
+	<context:property-placeholder location="classpath*:/META-INF/funds/funds-*.properties"/>
+	<context:annotation-config />
+ 	
+ 	
+ 	<!-- enable scheculde service -->
+	
+	<!-- our JmxServer which publishes our beans via JMX -->
+	<!-- <bean id="jmxServer" class="com.j256.simplejmx.server.JmxServer" init-method="start" destroy-method="stop">
+		the port should probably come from a configured property
+		<property name="registryPort" value="${jmx.port}" />
+		<property name="registryHost" value="${jmx.host}" />
+		<property name="jmxAccessFile" value="${jmx.access.file}" />
+		<property name="jmxPasswordFile" value="${jmx.password.file}" />
+	</bean> -->
+	
+		<bean id="jmxServer" class="com.j256.simplejmx.server.JmxServer"
+		init-method="start" destroy-method="stop">
+		<constructor-arg value="${jmx.host}" index="0"></constructor-arg>
+		<constructor-arg value="${jmx.port}" index="1"></constructor-arg>
+		<constructor-arg value="${jmx.password.file}" index="2"></constructor-arg>
+		<constructor-arg value="${jmx.access.file}" index="3"></constructor-arg>
+	</bean>
+	<bean id="beanPublisher" class="com.j256.simplejmx.spring.BeanPublisher">
+		<property name="jmxServer" ref="jmxServer" />
+	</bean>
+	
+	<bean id="configurationManager"
+		class="com.palmcommerce.funds.configuration.v2.ConfigurationManager"
+		init-method="initLocal">
+		<property name="config" value="${funds.conf.local}"></property>
+		
+		
+	</bean>
+
+ 	<bean id="scheduledExecutorService"
+		class="com.palmcommerce.funds.configuration.v2.FundsScheduledExecutorService"
+		scope="singleton">
+	</bean>
+</beans>

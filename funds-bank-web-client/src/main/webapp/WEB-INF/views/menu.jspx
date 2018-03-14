@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_protocol240001" z="rnrI2TUaCd74NB8syIdysu05i/g=">
+            <menu:item id="i_protocol240001_new" messageCode="global_menu_new" url="/protocol240001s?form" z="ElzE1qyMRiBP3GgCLVFIUhB019o="/>
+            <menu:item id="i_protocol240001_list" messageCode="global_menu_list" url="/protocol240001s?page=1&amp;size=${empty param.size ? 10 : param.size}" z="HVqOqAOhZfWVYE5p2015/UeLLFg="/>
+        </menu:category>
+        <menu:category id="c_protocol240003" z="v747bKXUVS7CvH2r3Kjn4pFYuUY=">
+            <menu:item id="i_protocol240003_new" messageCode="global_menu_new" url="/protocol240003s?form" z="E7mRzmX8pj0JyrU87x99fa9Blxk="/>
+            <menu:item id="i_protocol240003_list" messageCode="global_menu_list" url="/protocol240003s?page=1&amp;size=${empty param.size ? 10 : param.size}" z="dZkeWTjEXXe+sSgWspDFAUmw8b0="/>
+        </menu:category>
+        <menu:category id="c_protocol240005" z="L7feIVLmh3NzaKZYvn9DIt3bSmY=">
+            <menu:item id="i_protocol240005_new" messageCode="global_menu_new" url="/protocol240005s?form" z="UZG4v105Km+76oDn08VqQPfLRE0="/>
+            <menu:item id="i_protocol240005_list" messageCode="global_menu_list" url="/protocol240005s?page=1&amp;size=${empty param.size ? 10 : param.size}" z="fHoZfNQ6NhX4SSlrVhqfj2rM1Ys="/>
+        </menu:category>
+        <menu:category id="c_protocol240004" z="RtrRS6o15jK6tdF8mRt1HBKAlhs=">
+            <menu:item id="i_protocol240004_new" messageCode="global_menu_new" url="/protocol240004s?form" z="kWjwySRVlwp7kYDA38z+tMrBDEw="/>
+            <menu:item id="i_protocol240004_list" messageCode="global_menu_list" url="/protocol240004s?page=1&amp;size=${empty param.size ? 10 : param.size}" z="c8/ZLI4lzdtvkNwby7y94oTMKpc="/>
+        </menu:category>
+        <menu:category id="c_protocol240002" z="zLTGf4sMvlXriOJ9g3xzPXQA8zU=">
+            <menu:item id="i_protocol240002_new" messageCode="global_menu_new" url="/protocol240002s?form" z="bnkwWi6HDhcFXYIK7sLRN6E+SuE="/>
+            <menu:item id="i_protocol240002_list" messageCode="global_menu_list" url="/protocol240002s?page=1&amp;size=${empty param.size ? 10 : param.size}" z="uOrNgT9loTUluO/jKyYyVeycC8w="/>
+        </menu:category>
+        <menu:category id="c_protocol25002" z="KcPp1Ui3YTj0gjmov5GJmSqj3Lc=">
+            <menu:item id="i_protocol25002_new" messageCode="global_menu_new" url="/protocol25002s?form" z="2DoRC5vUyItGaojW/wFb01SOcNw="/>
+            <menu:item id="i_protocol25002_list" messageCode="global_menu_list" url="/protocol25002s?page=1&amp;size=${empty param.size ? 10 : param.size}" z="3Lby7BhJf1JsKp/AKGZXNKUqJmA="/>
+        </menu:category>
+        <menu:category id="c_protocol250004" z="60l0LbjVPkvlwN2Kdv2nJPHx3sE=">
+            <menu:item id="i_protocol250004_new" messageCode="global_menu_new" url="/protocol250004s?form" z="bfidVSiX6UmWaSkuFAuSt9vSzuM="/>
+            <menu:item id="i_protocol250004_list" messageCode="global_menu_list" url="/protocol250004s?page=1&amp;size=${empty param.size ? 10 : param.size}" z="yKjWP6oAHMBFfFDM9CrQSgHwSRE="/>
+        </menu:category>
+    </menu:menu>
+</div>

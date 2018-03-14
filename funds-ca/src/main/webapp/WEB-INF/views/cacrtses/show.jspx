@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_palmcommerce_funds_ca_model_Cacrts" object="${cacrts}" path="/cacrtses" z="qsueqMXi2B6+X6mxlRnsouLtwvw=">
+        <field:display field="nodecode" id="s_com_palmcommerce_funds_ca_model_Cacrts_nodecode" object="${cacrts}" z="rSA0rL1Tz7LugJ4aMXvVyGnmxls="/>
+        <field:display date="true" dateTimePattern="${cacrts_modifytime_date_format}" field="modifytime" id="s_com_palmcommerce_funds_ca_model_Cacrts_modifytime" object="${cacrts}" z="RKgKstB81oC4AzlHYX7q/n4o1sc="/>
+        <field:display field="iscsr" id="s_com_palmcommerce_funds_ca_model_Cacrts_iscsr" object="${cacrts}" z="45ofD2Oyu3fTIAx6szlKM5rQw8o="/>
+        <field:display field="content" id="s_com_palmcommerce_funds_ca_model_Cacrts_content" object="${cacrts}" z="tlCxrHMKcnZRMsNXBWywZ8FKzMU="/>
+    </page:show>
+</div>

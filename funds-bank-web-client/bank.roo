@@ -1,0 +1,92 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-08 18:32:48
+project --topLevelPackage com.palmcommerce.funds.mock.client
+hint
+jpa setup --provider ECLIPSELINK --database HYPERSONIC_IN_MEMORY 
+hint
+enum type --class com.palmcommerce.funds.mock.client.model.TranscodeEnum
+enum constant --name Protocol240001
+enum constant --name Protocol240002
+enum constant --name Protocol240003
+enum constant --name Protocol240004
+enum constant --name Protocol240005
+enum constant --name Protocol240006
+enum constant --name Protocol250001
+enum constant --name Protocol250002
+enum constant --name Protocol250003
+enum constant --name Protocol250004
+enum constant --name Protocol250005
+enum constant --name Protocol250006
+enum constant --name Protocol250007
+enum constant --name Protocol250008
+enum constant --name Protocol250009
+enum constant --name Protocol250010
+enum constant --name Protocol250011
+enum type --class ~.model.FromCodeEnum
+enum constant --name B000001
+enum constant --name B000002
+enum constant --name B000004
+enum constant --name B000003
+enum type --class ~.model.ToCodeEnum
+enum constant --name T000001
+enum constant --name T000002
+enum constant --name T000003
+enum constant --name T000004
+entity jpa --class ~.model.BankHeader --abstract --inheritanceType SINGLE_TABLE 
+field enum --fieldName transcode --type ~.model.TranscodeEnum --enumType STRING 
+field enum --fieldName fromcode --type ~.model.FromCodeEnum --enumType STRING 
+field enum --fieldName tocode --type ~.model.ToCodeEnum --enumType STRING 
+field number --fieldName siglen --type int
+field string --fieldName response
+entity jpa --class ~.model.Protocol240001 --extends ~.model.BankHeader --testAutomatically 
+focus --class ~.model.BankHeader
+field string --fieldName serialNumber
+focus --class ~.model.Protocol240001
+focus --class ~.model.BankHeader
+field string --fieldName transactionDatetime 
+focus --class ~.model.Protocol240001
+field string --fieldName userId
+entity jpa --class ~.model.Protocol240002 --extends ~.model.BankHeader
+field string --fieldName userId
+field string --fieldName userName
+field string --fieldName idType
+field string --fieldName idNumber
+field string --fieldName bindType
+field string --fieldName bankAccount
+field string --fieldName bankDatetime
+entity jpa --class ~.model.Protocol250004 --extends ~.model.BankHeader
+field string --fieldName userId
+field string --fieldName userName
+field string --fieldName chargeType
+field string --fieldName chargeAccount
+field string --fieldName bankDatetime
+entity jpa --class ~.model.Protocol240004 --extends ~.model.BankHeader
+field string --fieldName cancelSerialNumber
+field string --fieldName userId
+field string --fieldName userName
+field string --fieldName amount
+field string --fieldName bankDatetime
+entity jpa --class ~.model.Protocol240005 --extends ~.model.BankHeader
+field string --fieldName realUsername
+field string --fieldName idType
+field string --fieldName idNumber
+field string --fieldName bankDatetime
+web mvc setup
+web mvc all --package com.palmcommerce.funds.mock.client.model.mock.web
+perform tests
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-08 18:55:21
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-08 19:09:23
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-08 19:09:27
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-09-09 14:59:15
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-09-09 17:31:16
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-11 09:04:49
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-11 09:23:27
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-12 11:36:25
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-12 11:44:23
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-12 11:45:56
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-12 12:07:23
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-12 12:14:24
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-09-12 12:17:31
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-09-12 12:19:33

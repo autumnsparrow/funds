@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.palmcommerce</groupId>
+  <artifactId>funds-server-trade</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>funds-trade-server</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>com.palmcommerce</groupId>
+    	<artifactId>funds-trade</artifactId>
+    	<version>0.0.2-SNAPSHOT</version>
+    </dependency>
+    
+     
+  </dependencies>
+  
+  
+   <build>
+ <plugins>
+ 
+ <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+            <archive>
+                <manifest>
+                    <mainClass>org.apache.camel.spring.Main</mainClass>
+                    <classpathPrefix>lib/</classpathPrefix>
+                    <addClasspath>true</addClasspath>
+                </manifest>
+            </archive>
+        </configuration>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+            <descriptors>
+                <descriptor>src/main/assembly/dist.xml</descriptor>
+            </descriptors>
+        </configuration>
+        <executions>
+            <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                    <goal>single</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+    
+     <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>appassembler-maven-plugin</artifactId>
+        <version>1.1.1</version>        
+        <configuration>
+          <repositoryLayout>flat</repositoryLayout>
+          <includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>         
+
+          <daemons>
+            <daemon>
+              <id>funds-server-trade</id>
+              <mainClass>com.palmcommerce.funds.trade.server.MainTradeServer</mainClass>
+              <commandLineArguments>
+                <commandLineArgument>start</commandLineArgument>
+              </commandLineArguments>
+              <platforms>
+                <platform>jsw</platform>
+              </platforms>              
+            </daemon>
+            
+         	 </daemons>
+        </configuration>
+        <executions>
+          <execution>
+            <id>generate-jsw-scripts</id>
+            <phase>package</phase>
+            <goals>
+              <goal>generate-daemons</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+ 
+ </plugins>
+ 
+ </build>
+ 
+ 
+  <repositories>
+    <repository>
+      <id>snapshots</id>
+      <name>Archiva Managed Snapshot Repository</name>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>snapshots</id>
+      <name>Archiva Managed Snapshot Repository</name>
+      <url>http://mvn.palm.com:4567/repository/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  
+</project>

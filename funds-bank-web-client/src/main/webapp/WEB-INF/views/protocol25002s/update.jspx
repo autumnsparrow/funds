@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_palmcommerce_funds_mock_client_model_Protocol25002" modelAttribute="protocol25002" path="/protocol25002s" versionField="Version" z="1MQGjU5aMlLocqFoW16Ij8YU4/I=">
+        <field:input field="serialNumber" id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_serialNumber" z="cy8iUosN4yBcw5jtoF/uC+lRuwU="/>
+        <field:input field="transactionDatetime" id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_transactionDatetime" z="V2+JMDUhAHxP5duUwK9N3R7nEP0="/>
+        <field:select field="transcode" id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_transcode" items="${transcodeenums}" path="transcodeenums" z="cXwPrUqdXApar8NTWVZJhXY1a6Q="/>
+        <field:select field="fromcode" id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_fromcode" items="${fromcodeenums}" path="fromcodeenums" z="1VtoTjc8raFf8cCMUKydwR3W8IU="/>
+        <field:select field="tocode" id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_tocode" items="${tocodeenums}" path="tocodeenums" z="0vG4jufy+t4KP3J5DXwTNfA0Ydc="/>
+        <field:input field="siglen" id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_siglen" z="FSDqoJEvdwLPbInAPaxzLvk7klY="/>
+        <field:input field="response" id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_response" z="nTVKPDwOGgfLakb1GR60fhOpfxs="/>
+    </form:update>
+</div>

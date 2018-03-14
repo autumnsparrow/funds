@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServerRules>
+	<!--  will retune the xml form result -->
+	
+	<RouteRule>
+		
+		<Query>/META-INF/funds/funds-connection-trade-client-route.xml</Query>
+		<ToCode>from code</ToCode>
+		<FromCode> to code</FromCode>
+	</RouteRule>
+		
+<<<<<<< .mine
+	<!-- <LocalConfiguration>
+		<LocalKeyPath>/META-INF/crts/bank_test_01/BT000001.key</LocalKeyPath>
+		<LocalKeypassphase>bt000001</LocalKeypassphase>
+		<RemoteCrtPath>/META-INF/crts/bank_test_01/P0000001.crt</RemoteCrtPath>
+=======
+	<LocalConfiguration>
+		<LocalKeyPath>/META-INF/crts/bank_test_01/BT000001.key</LocalKeyPath>
+		<LocalKeypassphase>bt000001</LocalKeypassphase>
+		<RemoteCrtPath>/META-INF/crts/bank_test_01/P0000001.crt</RemoteCrtPath>
+>>>>>>> .r1972
+		<RemoteRootCa>/META-INF/crts/chongqing_lottery_ca.crt</RemoteRootCa>
+<<<<<<< .mine
+	</LocalConfiguration> -->
+	
+=======
+	</LocalConfiguration>
+
+>>>>>>> .r1972
+	 
+	 
+	<!-- <LocalConfiguration>
+		<LocalKeyPath>/META-INF/crts-local/T0000003.key</LocalKeyPath>
+		<LocalKeypassphase>t0000003</LocalKeypassphase>
+		<RemoteCrtPath>/META-INF/crts-local/P0000001.crt</RemoteCrtPath>
+		<RemoteRootCa>/META-INF/crts-local/chongqing_plam_lottery_ca.crt</RemoteRootCa>
+	</LocalConfiguration> 
+	<LocalConfiguration>
+		<LocalKeyPath>/META-INF/crts-local/B_244_25002.key</LocalKeyPath>
+		<LocalKeypassphase>123456</LocalKeypassphase>
+		<RemoteCrtPath>/META-INF/crts-local/P_243_35001.crt</RemoteCrtPath>
+		<RemoteRootCa>/META-INF/crts-local/ca_root.crt</RemoteRootCa>
+	</LocalConfiguration>
+	-->
+	
+	<SharedProcessorNumber>20</SharedProcessorNumber>
+	<TaskExecutorNumber>5</TaskExecutorNumber>
+	<ProxyThreadPollExecutorNumber>40</ProxyThreadPollExecutorNumber>
+	
+	
+	
+<!-- 	<Listener>
+		<Port>24101</Port>
+		<Ip>127.0.0.1</Ip>
+	</Listener>
+	 -->
+	
+
+	
+	
+<!-- 
+	<Client>
+		<MaxConnections>50</MaxConnections>
+		<MinConnections>2</MinConnections>
+		<PingInterval>5000</PingInterval>
+		<Clazz>com.palmcommerce.protocol.impl.p2t.P250001</Clazz>
+	</Client> -->
+</ServerRules>

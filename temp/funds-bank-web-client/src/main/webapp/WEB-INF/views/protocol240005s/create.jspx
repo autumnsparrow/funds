@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_palmcommerce_funds_mock_client_model_Protocol240005" modelAttribute="protocol240005" path="/protocol240005s" render="${empty dependencies}" z="Ka983MHSNz/3TAD5pLHjXmRV8V8=">
+        <field:select field="transcode" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_transcode" items="${transcodeenums}" path="transcodeenums" z="1QmiOw/PKQ3MsITLWDikrqHTO2w="/>
+        <field:select field="fromcode" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_fromcode" items="${fromcodeenums}" path="fromcodeenums" z="7QeGD8FVVajcb0BbQpNtnKQc+jc="/>
+        <field:select field="tocode" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_tocode" items="${tocodeenums}" path="tocodeenums" z="V2JjjB3BJqv9e2XRo9UCJX8mgoM="/>
+        <field:input field="siglen" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_siglen" z="QhCpjQ1i/H3uw2r/AnqHXYEJIKs="/>
+        <field:input field="response" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_response" z="hzMS3A+P1oGbbqt113cVHfieIyo="/>
+        <field:input field="serialNumber" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_serialNumber" z="xsBPSR9tTBRCzXa7lbEztsU9Vl8="/>
+        <field:input field="transactionDatetime" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_transactionDatetime" z="mQ6gCDuphxfLvF3Y3vdk3Z0Tt7E="/>
+        <field:input field="realUsername" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_realUsername" z="NpXbd3bnvgdNeqHg3UAy4K5XOdY="/>
+        <field:input field="idType" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_idType" z="HnapZ7yjpYIUFiflniSwYkcTTn4="/>
+        <field:input field="idNumber" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_idNumber" z="M0OjJ+aZ0p+3hCNxtV1h25cG8bQ="/>
+        <field:input field="bankDatetime" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_bankDatetime" z="i0bMJBs4gPqhKF4Ncie7yMbUHFM="/>
+        <field:input field="phone" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_phone" z="Vd1Ud04vE3hDMjm1TpQQOcb4hag="/>
+        <field:input field="account" id="c_com_palmcommerce_funds_mock_client_model_Protocol240005_account" z="ecWoO8B2TmDoJUMUd25tuJFRGz4="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_palmcommerce_funds_mock_client_model_Protocol240005" render="${not empty dependencies}" z="QWsIfdpkieTReWkbubIYCvy/qsA="/>
+</div>

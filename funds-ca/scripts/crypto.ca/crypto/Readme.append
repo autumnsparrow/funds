@@ -1,0 +1,6 @@
+
+
+Create the Root Ca:
+
+1. echo "xxx_ca" >ca.conf
+2. sh create_ca.sh

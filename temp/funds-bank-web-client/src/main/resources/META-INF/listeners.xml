@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServerRules>
+
+	<RouteRule>
+		<!--  will retune the xml form result -->
+		<Query>/META-INF/funds/funds-connection-trade-client-route.xml</Query>
+		<ToCode>from code</ToCode>
+		<FromCode> to code</FromCode>
+	</RouteRule>
+		
+	
+	
+	
+	
+	<SharedProcessorNumber>20</SharedProcessorNumber>
+	<TaskExecutorNumber>50</TaskExecutorNumber>
+	<ProxyThreadPollExecutorNumber>20</ProxyThreadPollExecutorNumber>
+	
+
+	
+	<Proxy>
+		<RootCaCode>R0000000</RootCaCode>
+		<NodeCode>T0000001</NodeCode>
+	</Proxy>
+	
+	<Listener>
+		<Port>24101</Port>
+		<Ip>192.168.1.242</Ip>
+	</Listener>
+	
+	<!-- 
+	<Listener>
+		<Port>25002</Port>
+		<Ip>127.0.0.1</Ip>
+	</Listener>
+	
+	 -->
+	
+<!-- 
+	<Client>
+		<MaxConnections>50</MaxConnections>
+		<MinConnections>2</MinConnections>
+		<PingInterval>5000</PingInterval>
+		<Clazz>com.palmcommerce.protocol.impl.p2t.P250001</Clazz>
+	</Client> -->
+</ServerRules>

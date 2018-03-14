@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_palmcommerce_funds_mock_client_model_Protocol25002" items="${protocol25002s}" z="CsAs0dTGfQwNl6UJj8XSCeDLztI=">
+        <table:table data="${protocol25002s}" id="l_com_palmcommerce_funds_mock_client_model_Protocol25002" path="/protocol25002s" z="sPRBCfGI3ieJtAV7rBpVisZ+po8=">
+            <table:column id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_serialNumber" property="serialNumber" z="perZ1GzeP/z51nKG+cL0053C65o="/>
+            <table:column id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_transactionDatetime" property="transactionDatetime" z="x3MTkLCnqRWoLx4m+PxUVk/wALk="/>
+            <table:column id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_transcode" property="transcode" z="NAWZYh5kKNlnyZG4RDhrhiBGTUo="/>
+            <table:column id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_fromcode" property="fromcode" z="aKjEJ6sFjQxnKpdbLeWO85TobSc="/>
+            <table:column id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_tocode" property="tocode" z="caaM7xKaa0nB+udM+CJPSMRnnpY="/>
+            <table:column id="c_com_palmcommerce_funds_mock_client_model_Protocol25002_siglen" property="siglen" z="J8uLQ5D8s+kQq5YGGCzC+y8M4mo="/>
+        </table:table>
+    </page:list>
+</div>

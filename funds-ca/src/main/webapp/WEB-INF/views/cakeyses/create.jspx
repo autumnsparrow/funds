@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_palmcommerce_funds_ca_model_Cakeys" modelAttribute="cakeys" path="/cakeyses" render="${empty dependencies}" z="HDe2Q2bteMXqivLfoH+UPaR31tg=">
+        <field:input field="nodecode" id="c_com_palmcommerce_funds_ca_model_Cakeys_nodecode" z="H8rgJApKQrqm/W5kLoxUa+0bFcI="/>
+        <field:input field="passphase" id="c_com_palmcommerce_funds_ca_model_Cakeys_passphase" z="hEBKD6elvrrZlt7/DxuDvb1UJw4="/>
+        <field:datetime dateTimePattern="${cakeys_modifytime_date_format}" field="modifytime" id="c_com_palmcommerce_funds_ca_model_Cakeys_modifytime" z="dRd5KOJ1VwmuXb2X4N3tS/TR2nI="/>
+        <field:textarea field="content" id="c_com_palmcommerce_funds_ca_model_Cakeys_content" z="8ypYdXOd0QAOwU49NG8khuhS+uM="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_palmcommerce_funds_ca_model_Cakeys" render="${not empty dependencies}" z="PYNOLi5TrkdLBrDc9k3hlk2Ig80="/>
+</div>

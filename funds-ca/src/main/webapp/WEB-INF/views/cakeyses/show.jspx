@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_palmcommerce_funds_ca_model_Cakeys" object="${cakeys}" path="/cakeyses" z="dIlJapiXAA2hSe8KR8YU5aXurOM=">
+        <field:display field="nodecode" id="s_com_palmcommerce_funds_ca_model_Cakeys_nodecode" object="${cakeys}" z="lJGu/bN3oblihoVyq9xxEhj2pXs="/>
+        <field:display field="passphase" id="s_com_palmcommerce_funds_ca_model_Cakeys_passphase" object="${cakeys}" z="NcvQdI0TodZhfymb4Ejplnn+x84="/>
+        <field:display date="true" dateTimePattern="${cakeys_modifytime_date_format}" field="modifytime" id="s_com_palmcommerce_funds_ca_model_Cakeys_modifytime" object="${cakeys}" z="LlfSyWH6mZjt18RqvweBLZK6NNc="/>
+        <field:display field="content" id="s_com_palmcommerce_funds_ca_model_Cakeys_content" object="${cakeys}" z="CV2zANA5RS3c85uBsMD6YFkj9c4="/>
+    </page:show>
+</div>

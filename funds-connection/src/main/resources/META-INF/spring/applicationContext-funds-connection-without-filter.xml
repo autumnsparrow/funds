@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+ <context:property-placeholder location="classpath*:META-INF/funds/funds-*.properties"/>
+ 
+ <!--  configuration for the connection-client mode -->
+<!-- Need the funds-id and funds-packet. -->
+ <bean id="minaContext"
+ 	class="com.palmcommerce.funds.connection.mina.ctx.MinaContext">
+ 	
+ 	<property name="enableDebug" value="${enable.debug}"></property>
+ 	<property name="enableJMX" value="${enable.jmx}"></property>
+ 	<property name="jmxServer"
+ 		ref="jmxServer"/>
+ 	<property name="configurationManager"
+ 		ref="configurationManager"/>
+ 	
+ 	<property name="packetSecurity"
+ 		ref="packetSecurity"/>
+ 			<property name="metrics"
+ 		ref="metrics"/>
+ 	
+ </bean>
+ 
+</beans>
